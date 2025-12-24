@@ -4,749 +4,448 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partnership Proposal | Lynx Group & ACN</title>
-    <meta name="description" content="A first-of-its-kind partnership proposal for Lynx Group and ACN to pioneer the representation of Tech Creative Entrepreneurs in Africa.">
+    <meta name="description" content="A first-of-its-kind partnership proposal for Lynx Group and ACN">
     <meta name="robots" content="noindex, nofollow">
-    <meta property="og:title" content="Partnership Proposal | Lynx Group & ACN">
-    <meta property="og:description" content="The Next Frontier of African Creatives - BrillaPrep & TradeMetricsPro">
-    <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-logo">
-            <span class="logo-text">Partnership Proposal</span>
-        </div>
-        <div class="nav-links">
-            <a href="#vision">Vision</a>
-            <a href="#platforms">Platforms</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#contact" class="nav-cta">Let's Talk</a>
-        </div>
-        <button class="nav-toggle" id="navToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#vision">Vision</a>
-        <a href="#platforms">Platforms</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#contact">Let's Talk</a>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-            <div class="gradient-orb orb-3"></div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="logo-icon">P</span>
+            <span class="logo-text">Proposal</span>
         </div>
-        <div class="hero-content">
-            <div class="hero-badge animate-on-scroll">
-                <span class="badge-dot"></span>
-                <span>Exclusive Partnership Proposal</span>
-            </div>
-            <h1 class="hero-title animate-on-scroll">
-                <span class="title-line">The Next Frontier</span>
-                <span class="title-line gradient-text">of African Creatives</span>
-            </h1>
-            <p class="hero-subtitle animate-on-scroll">
-                A first-of-its-kind opportunity for Lynx Group & ACN to pioneer the representation of Tech Creative Entrepreneurs in Africa.
-            </p>
-            <div class="hero-cta animate-on-scroll">
-                <a href="#vision" class="btn btn-primary">
-                    <span>Explore The Vision</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                </a>
-                <a href="#platforms" class="btn btn-secondary">View Platforms</a>
-            </div>
-            <div class="hero-stats animate-on-scroll">
-                <div class="stat">
-                    <span class="stat-number" data-count="2">0</span>
-                    <span class="stat-label">Live Platforms</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-count="200">0</span>
-                    <span class="stat-label">Global Traders Served</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number">5M+</span>
-                    <span class="stat-label">Student Market</span>
-                </div>
-            </div>
+        <div class="slide-counter">
+            <span id="currentSlide">01</span>
+            <span class="counter-divider">/</span>
+            <span id="totalSlides">10</span>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <span>Scroll to explore</span>
-        </div>
-    </section>
+    </nav>
 
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="container">
-            <blockquote class="main-quote animate-on-scroll">
-                <span class="quote-mark">"</span>
-                <p>Build systems that outlive talent.</p>
-                <cite>— Richie Mensah, Founder of Lynx Group</cite>
-            </blockquote>
-            <p class="quote-follow animate-on-scroll">
-                This philosophy drives everything I build. Two platforms. Automated systems. Global reach. African roots.
-            </p>
-        </div>
-    </section>
+    <!-- Slide Navigation Arrows -->
+    <button class="nav-arrow nav-prev" id="prevBtn" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+    </button>
+    <button class="nav-arrow nav-next" id="nextBtn" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+        </svg>
+    </button>
 
-    <!-- Vision Section -->
-    <section class="vision-section" id="vision">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">The Opportunity</span>
-                <h2 class="section-title">Why This Partnership <span class="gradient-text">Matters</span></h2>
-            </div>
+    <!-- Slide Indicators -->
+    <div class="slide-indicators" id="slideIndicators"></div>
 
-            <div class="vision-grid">
-                <div class="vision-card animate-on-scroll">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                        </svg>
-                    </div>
-                    <h3>First Mover Advantage</h3>
-                    <p>Be the first talent agency in Africa to formally represent tech entrepreneurs. Own the category before anyone else.</p>
+    <!-- Main Presentation Container -->
+    <main class="presentation" id="presentation">
+
+        <!-- SLIDE 1: Title -->
+        <section class="slide slide-title active" data-slide="1">
+            <div class="slide-content">
+                <div class="title-badge animate-in">
+                    <span class="badge-pulse"></span>
+                    <span>Exclusive Partnership Proposal</span>
                 </div>
-
-                <div class="vision-card animate-on-scroll">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                    </div>
-                    <h3>Global Reach</h3>
-                    <p>TradeMetricsPro serves 200+ traders worldwide. BrillaPrep targets 5M+ students across West Africa. Think continental, act global.</p>
-                </div>
-
-                <div class="vision-card animate-on-scroll">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
-                        </svg>
-                    </div>
-                    <h3>Diversified Revenue</h3>
-                    <p>SaaS subscriptions provide recurring revenue, independent of entertainment industry cycles. Stable. Scalable. Sustainable.</p>
-                </div>
-
-                <div class="vision-card animate-on-scroll">
-                    <div class="vision-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3>New Narrative</h3>
-                    <p>"From Music to Tech" — A compelling story that positions Lynx Group as the definitive home for African creative talent, regardless of medium.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Evolution Timeline -->
-    <section class="evolution-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">The Pattern</span>
-                <h2 class="section-title">Lynx Has Always Been <span class="gradient-text">First</span></h2>
-                <p class="section-subtitle">Every major expansion followed the same playbook: identify the gap, build the infrastructure, professionalize before anyone else.</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-year">2006</div>
-                    <div class="timeline-content">
-                        <h4>Lynx Entertainment</h4>
-                        <p>First professional music production studio in Ghana</p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-year">2018</div>
-                    <div class="timeline-content">
-                        <h4>Tigon Creative Studios</h4>
-                        <p>Expansion into visual production</p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <h4>Lynx Group Limited</h4>
-                        <p>Corporate restructuring with Quick Angels</p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h4>ACN Launch</h4>
-                        <p>African Creative Network for talent representation</p>
-                    </div>
-                </div>
-                <div class="timeline-item animate-on-scroll">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h4>Tech Expansion</h4>
-                        <p>Lynx Electronics, Global Distribution</p>
-                    </div>
-                </div>
-                <div class="timeline-item timeline-future animate-on-scroll">
-                    <div class="timeline-year">Next</div>
-                    <div class="timeline-content">
-                        <h4>Tech Creatives?</h4>
-                        <p>The natural next frontier</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Platforms Section -->
-    <section class="platforms-section" id="platforms">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">The Platforms</span>
-                <h2 class="section-title">Two Systems Built to <span class="gradient-text">Scale</span></h2>
-                <p class="section-subtitle">Not ideas. Not prototypes. Fully operational platforms serving real users today.</p>
-            </div>
-
-            <!-- BrillaPrep Platform -->
-            <div class="platform-showcase animate-on-scroll">
-                <div class="platform-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="browser-url">brillaprep.org</div>
-                        </div>
-                        <div class="browser-content brilla-preview">
-                            <div class="preview-header">
-                                <div class="preview-logo">
-                                    <span class="logo-icon">B</span>
-                                    <span>BrillaPrep</span>
-                                </div>
-                                <div class="preview-nav">
-                                    <span>Practice</span>
-                                    <span>Library</span>
-                                    <span>Dashboard</span>
-                                </div>
-                            </div>
-                            <div class="preview-hero">
-                                <h3>Excel in Your Exams</h3>
-                                <p>WASSCE | BECE | NSMQ</p>
-                                <div class="preview-cta">Start Learning</div>
-                            </div>
-                            <div class="preview-features">
-                                <div class="preview-feature">
-                                    <span class="feature-icon">📚</span>
-                                    <span>Past Questions</span>
-                                </div>
-                                <div class="preview-feature">
-                                    <span class="feature-icon">🎯</span>
-                                    <span>AI Practice</span>
-                                </div>
-                                <div class="preview-feature">
-                                    <span class="feature-icon">📊</span>
-                                    <span>Progress Tracking</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="platform-glow brilla-glow"></div>
-                </div>
-
-                <div class="platform-info">
-                    <div class="platform-badge">EdTech</div>
-                    <h3 class="platform-name">BrillaPrep</h3>
-                    <p class="platform-tagline">Democratizing Academic Excellence</p>
-                    <p class="platform-description">
-                        The "Photomath of West Africa" — AI-powered exam preparation that gives every Ghanaian student the tools to excel, regardless of their school or background.
-                    </p>
-
-                    <div class="platform-features">
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>WASSCE, BECE & NSMQ focused</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>AI-powered adaptive learning</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Works offline (PWA)</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Affordable subscriptions (GHS 15-100)</span>
-                        </div>
-                    </div>
-
-                    <div class="platform-stats">
-                        <div class="platform-stat">
-                            <span class="stat-value">900K+</span>
-                            <span class="stat-desc">Annual exam candidates in Ghana</span>
-                        </div>
-                        <div class="platform-stat">
-                            <span class="stat-value">5M+</span>
-                            <span class="stat-desc">Addressable market in West Africa</span>
-                        </div>
-                    </div>
-
-                    <a href="https://brillaprep.org" target="_blank" class="platform-link">
-                        <span>Visit BrillaPrep</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                            <polyline points="15 3 21 3 21 9"/>
-                            <line x1="10" y1="14" x2="21" y2="3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- TradeMetricsPro Platform -->
-            <div class="platform-showcase reverse animate-on-scroll">
-                <div class="platform-visual">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="browser-url">ea.trademetricspro.com</div>
-                        </div>
-                        <div class="browser-content trade-preview">
-                            <div class="preview-header dark">
-                                <div class="preview-logo">
-                                    <span class="logo-icon trade">T</span>
-                                    <span>TradeMetricsPro</span>
-                                </div>
-                            </div>
-                            <div class="preview-dashboard">
-                                <div class="dashboard-card">
-                                    <span class="card-label">Traders Served</span>
-                                    <span class="card-value">200+</span>
-                                </div>
-                                <div class="dashboard-card highlight">
-                                    <span class="card-label">Best Backtest</span>
-                                    <span class="card-value green">+127.4%</span>
-                                </div>
-                                <div class="chart-preview">
-                                    <div class="chart-bar" style="height: 40%"></div>
-                                    <div class="chart-bar" style="height: 60%"></div>
-                                    <div class="chart-bar" style="height: 45%"></div>
-                                    <div class="chart-bar" style="height: 80%"></div>
-                                    <div class="chart-bar" style="height: 65%"></div>
-                                    <div class="chart-bar" style="height: 90%"></div>
-                                    <div class="chart-bar" style="height: 75%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="platform-glow trade-glow"></div>
-                </div>
-
-                <div class="platform-info">
-                    <div class="platform-badge trade">FinTech</div>
-                    <h3 class="platform-name">TradeMetricsPro</h3>
-                    <p class="platform-tagline">Precision Trading Automation</p>
-                    <p class="platform-description">
-                        Transform any trading strategy into institutional-grade automated systems. From TradingView idea to live trading bot — we bridge the gap.
-                    </p>
-
-                    <div class="platform-features">
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Custom MT4/MT5 EA development</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Pine Script conversion</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Monte Carlo simulations (1,000 runs)</span>
-                        </div>
-                        <div class="feature-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Live performance dashboard</span>
-                        </div>
-                    </div>
-
-                    <div class="platform-stats">
-                        <div class="platform-stat">
-                            <span class="stat-value">200+</span>
-                            <span class="stat-desc">Traders served globally</span>
-                        </div>
-                        <div class="platform-stat">
-                            <span class="stat-value">2-4 wks</span>
-                            <span class="stat-desc">Turnaround time</span>
-                        </div>
-                    </div>
-
-                    <a href="https://ea.trademetricspro.com" target="_blank" class="platform-link trade">
-                        <span>Visit TradeMetricsPro</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                            <polyline points="15 3 21 3 21 9"/>
-                            <line x1="10" y1="14" x2="21" y2="3"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Section -->
-    <section class="comparison-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">The Parallel</span>
-                <h2 class="section-title">Tech Creatives Are <span class="gradient-text">The New Artists</span></h2>
-            </div>
-
-            <div class="comparison-table animate-on-scroll">
-                <div class="comparison-header">
-                    <div class="comparison-col">Traditional Creative</div>
-                    <div class="comparison-col">Tech Creative</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Writes songs</div>
-                    <div class="comparison-cell highlight">Writes code</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Performs on stage</div>
-                    <div class="comparison-cell highlight">Launches on app stores</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Signs record deals</div>
-                    <div class="comparison-cell highlight">Closes funding rounds</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Reaches fans through radio</div>
-                    <div class="comparison-cell highlight">Reaches users through algorithms</div>
-                </div>
-                <div class="comparison-row">
-                    <div class="comparison-cell">Creates hits</div>
-                    <div class="comparison-cell highlight">Creates platforms</div>
-                </div>
-                <div class="comparison-footer">
-                    <p>Both create value. Both shape culture. <strong>Both deserve representation.</strong></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section" id="benefits">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">Mutual Value</span>
-                <h2 class="section-title">What <span class="gradient-text">We Both</span> Gain</h2>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefits-column animate-on-scroll">
-                    <div class="benefits-header lynx">
-                        <h3>What Lynx/ACN Gains</h3>
-                    </div>
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Pioneer Status</h4>
-                                <p>First agency in Africa to represent tech founders</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="3" y1="9" x2="21" y2="9"/>
-                                    <line x1="9" y1="21" x2="9" y2="9"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Diversified Portfolio</h4>
-                                <p>Recurring SaaS revenue beyond entertainment cycles</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="2" y1="12" x2="22" y2="12"/>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Global Exposure</h4>
-                                <p>International client base + West African student market</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Compelling Story</h4>
-                                <p>"From Music to Tech" — A narrative that writes itself</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="12" y1="1" x2="12" y2="23"/>
-                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Commission Revenue</h4>
-                                <p>% of deals, sponsorships, and partnerships facilitated</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="benefits-divider animate-on-scroll">
-                    <div class="divider-line"></div>
-                    <div class="divider-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
-                        </svg>
-                    </div>
-                    <div class="divider-line"></div>
-                </div>
-
-                <div class="benefits-column animate-on-scroll">
-                    <div class="benefits-header me">
-                        <h3>What I Gain</h3>
-                    </div>
-                    <div class="benefits-list">
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="8.5" cy="7" r="4"/>
-                                    <line x1="20" y1="8" x2="20" y2="14"/>
-                                    <line x1="23" y1="11" x2="17" y2="11"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Professional Representation</h4>
-                                <p>Structured approach to partnerships and media</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Brand Credibility</h4>
-                                <p>Association with Ghana's premier creative brand</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="23 7 16 12 23 17 23 7"/>
-                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Media & Visibility</h4>
-                                <p>PR support, Masterminds Podcast, media relationships</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="3"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Strategic Guidance</h4>
-                                <p>Learn from Richie's experience scaling businesses</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <div class="benefit-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <div class="benefit-content">
-                                <h4>Network Access</h4>
-                                <p>Investors, corporates, international connections</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Revenue Projection Section -->
-    <section class="projection-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-tag">The Numbers</span>
-                <h2 class="section-title">Growth <span class="gradient-text">Trajectory</span></h2>
-            </div>
-
-            <div class="projection-cards">
-                <div class="projection-card animate-on-scroll">
-                    <div class="projection-header brilla">
-                        <span class="projection-badge">BrillaPrep</span>
-                        <span class="projection-market">EdTech</span>
-                    </div>
-                    <div class="projection-body">
-                        <div class="projection-row">
-                            <span class="projection-year">Year 1</span>
-                            <span class="projection-value">GHS 600K</span>
-                        </div>
-                        <div class="projection-row">
-                            <span class="projection-year">Year 2</span>
-                            <span class="projection-value">GHS 3M</span>
-                        </div>
-                        <div class="projection-row highlight">
-                            <span class="projection-year">Year 3</span>
-                            <span class="projection-value">GHS 15M</span>
-                        </div>
-                    </div>
-                    <div class="projection-footer">
-                        <span>50,000 subscribers target</span>
-                    </div>
-                </div>
-
-                <div class="projection-card animate-on-scroll">
-                    <div class="projection-header trade">
-                        <span class="projection-badge">TradeMetricsPro</span>
-                        <span class="projection-market">FinTech</span>
-                    </div>
-                    <div class="projection-body">
-                        <div class="projection-row">
-                            <span class="projection-year">Year 1</span>
-                            <span class="projection-value">$75K</span>
-                        </div>
-                        <div class="projection-row">
-                            <span class="projection-year">Year 2</span>
-                            <span class="projection-value">$180K</span>
-                        </div>
-                        <div class="projection-row highlight">
-                            <span class="projection-year">Year 3</span>
-                            <span class="projection-value">$375K</span>
-                        </div>
-                    </div>
-                    <div class="projection-footer">
-                        <span>500 projects/year target</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="cta-bg">
-            <div class="cta-orb orb-1"></div>
-            <div class="cta-orb orb-2"></div>
-        </div>
-        <div class="container">
-            <div class="cta-content animate-on-scroll">
-                <h2 class="cta-title">Let's Write History <span class="gradient-text">Together</span></h2>
-                <p class="cta-subtitle">
-                    Richie Mensah built Lynx by seeing what Ghana's creative industry <em>could become</em>, not just what it was. ACN has the same opportunity with tech creatives.
+                <h1 class="main-title animate-in delay-1">
+                    <span class="title-line">The Future of</span>
+                    <span class="title-line gradient-text">African Tech</span>
+                    <span class="title-line">Needs a Voice</span>
+                </h1>
+                <p class="main-subtitle animate-in delay-2">
+                    A proposal for Lynx Group & ACN to represent Ghana's next generation of tech innovators
                 </p>
-                <p class="cta-question">The only question: Will you be first — again?</p>
+                <div class="scroll-hint animate-in delay-3">
+                    <span>Press</span>
+                    <div class="key-icon">→</div>
+                    <span>to continue</span>
+                </div>
+            </div>
+            <div class="slide-visual">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+        </section>
 
-                <div class="cta-actions">
-                    <a href="mailto:your@email.com?subject=ACN Partnership Proposal" class="btn btn-primary btn-large">
+        <!-- SLIDE 2: The Ask -->
+        <section class="slide slide-ask" data-slide="2">
+            <div class="slide-content centered">
+                <span class="slide-label animate-in">The Proposition</span>
+                <h2 class="slide-title animate-in delay-1">
+                    I want <span class="highlight">Lynx Group</span> to manage me.
+                </h2>
+                <p class="slide-text animate-in delay-2">
+                    Use your unmatched network and influence to introduce my two tech platforms to Ghana — and eventually, the world.
+                </p>
+                <div class="platforms-preview animate-in delay-3">
+                    <div class="platform-chip">
+                        <span class="chip-dot brilla"></span>
+                        <span>BrillaPrep</span>
+                        <span class="chip-tag">EdTech</span>
+                    </div>
+                    <div class="platform-chip">
+                        <span class="chip-dot trade"></span>
+                        <span>TradeMetricsPro</span>
+                        <span class="chip-tag">FinTech</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Why This Matters -->
+        <section class="slide slide-why" data-slide="3">
+            <div class="slide-content">
+                <span class="slide-label animate-in">The Context</span>
+                <h2 class="slide-title animate-in delay-1">
+                    Tech founders are the <span class="gradient-text">new artists.</span>
+                </h2>
+                <div class="comparison-visual animate-in delay-2">
+                    <div class="comparison-side">
+                        <h4>Musicians</h4>
+                        <ul>
+                            <li>Create songs</li>
+                            <li>Perform on stages</li>
+                            <li>Sign record deals</li>
+                            <li>Build fanbases</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-divider">
+                        <span>=</span>
+                    </div>
+                    <div class="comparison-side highlighted">
+                        <h4>Tech Founders</h4>
+                        <ul>
+                            <li>Create platforms</li>
+                            <li>Launch to millions</li>
+                            <li>Close funding rounds</li>
+                            <li>Build user bases</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="slide-footnote animate-in delay-3">
+                    Both create value. Both shape culture. <strong>Both deserve representation.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: BrillaPrep -->
+        <section class="slide slide-brilla" data-slide="4">
+            <div class="slide-content split">
+                <div class="split-text">
+                    <span class="slide-label animate-in">Platform One</span>
+                    <div class="platform-logo animate-in delay-1">
+                        <div class="logo-mark brilla">B</div>
+                        <span>BrillaPrep</span>
+                    </div>
+                    <h2 class="slide-title animate-in delay-2">
+                        Empowering every Ghanaian student to <span class="gradient-text">excel.</span>
+                    </h2>
+                    <p class="slide-text animate-in delay-3">
+                        AI-powered exam preparation for WASSCE, BECE, and NSMQ. The study companion that levels the playing field.
+                    </p>
+                    <div class="feature-pills animate-in delay-4">
+                        <span class="pill">Past Questions</span>
+                        <span class="pill">AI Practice</span>
+                        <span class="pill">Works Offline</span>
+                        <span class="pill">Affordable</span>
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="phone-mockup animate-in delay-2">
+                        <div class="phone-screen brilla-screen">
+                            <div class="app-header">
+                                <span class="app-logo">B</span>
+                                <span>BrillaPrep</span>
+                            </div>
+                            <div class="app-hero">
+                                <h3>Ready to Excel?</h3>
+                                <p>WASSCE • BECE • NSMQ</p>
+                            </div>
+                            <div class="app-stats">
+                                <div class="app-stat">
+                                    <span class="stat-num">5M+</span>
+                                    <span class="stat-label">Students</span>
+                                </div>
+                                <div class="app-stat">
+                                    <span class="stat-num">10K+</span>
+                                    <span class="stat-label">Questions</span>
+                                </div>
+                            </div>
+                            <div class="app-cta">Start Learning</div>
+                        </div>
+                    </div>
+                    <div class="mockup-glow brilla-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: BrillaPrep Impact -->
+        <section class="slide slide-brilla-stats" data-slide="5">
+            <div class="slide-content centered">
+                <span class="slide-label animate-in">The Opportunity</span>
+                <h2 class="slide-title animate-in delay-1">
+                    <span class="big-number" data-count="900000">0</span>
+                </h2>
+                <p class="slide-text large animate-in delay-2">
+                    students sit for WASSCE & BECE in Ghana every year.
+                </p>
+                <div class="stat-cards animate-in delay-3">
+                    <div class="stat-card">
+                        <span class="card-number">5M+</span>
+                        <span class="card-label">Total addressable market in West Africa</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="card-number">GHS 15-100</span>
+                        <span class="card-label">Monthly subscription range</span>
+                    </div>
+                    <div class="stat-card highlight">
+                        <span class="card-number">LIVE</span>
+                        <span class="card-label">brillaprep.org</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: TradeMetricsPro -->
+        <section class="slide slide-trade" data-slide="6">
+            <div class="slide-content split reverse">
+                <div class="split-text">
+                    <span class="slide-label animate-in">Platform Two</span>
+                    <div class="platform-logo animate-in delay-1">
+                        <div class="logo-mark trade">T</div>
+                        <span>TradeMetricsPro</span>
+                    </div>
+                    <h2 class="slide-title animate-in delay-2">
+                        Turning strategies into <span class="gradient-text-green">automated profits.</span>
+                    </h2>
+                    <p class="slide-text animate-in delay-3">
+                        Professional trading bot development for MT4/MT5. We convert ideas into institutional-grade automated systems.
+                    </p>
+                    <div class="feature-pills animate-in delay-4">
+                        <span class="pill green">Custom EAs</span>
+                        <span class="pill green">Pine Script</span>
+                        <span class="pill green">Backtesting</span>
+                        <span class="pill green">24/7 Support</span>
+                    </div>
+                </div>
+                <div class="split-visual">
+                    <div class="dashboard-mockup animate-in delay-2">
+                        <div class="dash-header">
+                            <span class="dash-logo">T</span>
+                            <span>TradeMetricsPro</span>
+                        </div>
+                        <div class="dash-stats">
+                            <div class="dash-stat">
+                                <span class="dash-label">Traders Served</span>
+                                <span class="dash-value">200+</span>
+                            </div>
+                            <div class="dash-stat highlight">
+                                <span class="dash-label">Best Backtest</span>
+                                <span class="dash-value green">+127.4%</span>
+                            </div>
+                        </div>
+                        <div class="dash-chart">
+                            <div class="chart-line"></div>
+                            <svg class="chart-svg" viewBox="0 0 200 60">
+                                <path class="chart-path" d="M0,50 Q30,45 50,35 T100,25 T150,15 T200,5" fill="none" stroke="url(#chartGradient)" stroke-width="3"/>
+                                <defs>
+                                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#10B981"/>
+                                        <stop offset="100%" stop-color="#3B82F6"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="mockup-glow trade-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: TradeMetricsPro Stats -->
+        <section class="slide slide-trade-stats" data-slide="7">
+            <div class="slide-content centered">
+                <span class="slide-label animate-in">Global Reach</span>
+                <h2 class="slide-title animate-in delay-1">
+                    <span class="big-number green" data-count="200">0</span><span class="big-suffix">+</span>
+                </h2>
+                <p class="slide-text large animate-in delay-2">
+                    traders served across the globe — and counting.
+                </p>
+                <div class="stat-cards animate-in delay-3">
+                    <div class="stat-card">
+                        <span class="card-number">2-4 wks</span>
+                        <span class="card-label">Average delivery time</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="card-number">$500+</span>
+                        <span class="card-label">Average project value</span>
+                    </div>
+                    <div class="stat-card highlight green">
+                        <span class="card-number">LIVE</span>
+                        <span class="card-label">ea.trademetricspro.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: The Win-Win -->
+        <section class="slide slide-winwin" data-slide="8">
+            <div class="slide-content">
+                <span class="slide-label animate-in">The Partnership</span>
+                <h2 class="slide-title centered animate-in delay-1">
+                    What <span class="gradient-text">we both</span> gain.
+                </h2>
+                <div class="winwin-grid animate-in delay-2">
+                    <div class="winwin-card lynx">
+                        <div class="card-header">
+                            <h3>Lynx Group Gets</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>
+                                <span class="list-icon">🏆</span>
+                                <span><strong>First-mover status</strong> — Pioneer tech talent management</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">💰</span>
+                                <span><strong>Recurring revenue</strong> — SaaS commission streams</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🌍</span>
+                                <span><strong>Global exposure</strong> — International client base</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📰</span>
+                                <span><strong>PR story</strong> — "From Music to Tech"</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="winwin-divider">
+                        <div class="divider-icon">🤝</div>
+                    </div>
+                    <div class="winwin-card me">
+                        <div class="card-header">
+                            <h3>I Get</h3>
+                        </div>
+                        <ul class="card-list">
+                            <li>
+                                <span class="list-icon">📢</span>
+                                <span><strong>Your network</strong> — Access to media & brands</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">✨</span>
+                                <span><strong>Credibility</strong> — Lynx brand association</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🎯</span>
+                                <span><strong>Market reach</strong> — Ghana then global</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🧠</span>
+                                <span><strong>Guidance</strong> — Learn from your journey</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: The Vision -->
+        <section class="slide slide-vision" data-slide="9">
+            <div class="slide-content centered">
+                <span class="slide-label animate-in">The Roadmap</span>
+                <h2 class="slide-title animate-in delay-1">
+                    Ghana first. <span class="gradient-text">Then the world.</span>
+                </h2>
+                <div class="roadmap animate-in delay-2">
+                    <div class="roadmap-step active">
+                        <div class="step-marker">1</div>
+                        <div class="step-content">
+                            <h4>Ghana Launch</h4>
+                            <p>Leverage Lynx's local network to make BrillaPrep a household name for students.</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-connector"></div>
+                    <div class="roadmap-step">
+                        <div class="step-marker">2</div>
+                        <div class="step-content">
+                            <h4>West Africa</h4>
+                            <p>Expand to Nigeria, Ivory Coast, and other WASSCE countries.</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-connector"></div>
+                    <div class="roadmap-step">
+                        <div class="step-marker">3</div>
+                        <div class="step-content">
+                            <h4>Global Scale</h4>
+                            <p>TradeMetricsPro already serves global traders. Amplify with international PR.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: Call to Action -->
+        <section class="slide slide-cta" data-slide="10">
+            <div class="slide-content centered">
+                <div class="cta-icon animate-in">
+                    <span>🚀</span>
+                </div>
+                <h2 class="slide-title animate-in delay-1">
+                    Let's make <span class="gradient-text">history.</span>
+                </h2>
+                <p class="slide-text animate-in delay-2">
+                    Richie Mensah built Lynx by seeing what Ghana's creative industry <em>could become</em>.<br>
+                    This is that same opportunity — for tech.
+                </p>
+                <div class="cta-buttons animate-in delay-3">
+                    <a href="mailto:your@email.com?subject=Partnership Proposal - Let's Talk" class="cta-btn primary">
                         <span>Schedule a Meeting</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
                 </div>
-
-                <div class="cta-platforms">
-                    <a href="https://brillaprep.org" target="_blank" class="platform-pill">
-                        <span class="pill-dot brilla"></span>
-                        <span>brillaprep.org</span>
+                <div class="cta-links animate-in delay-4">
+                    <a href="https://brillaprep.org" target="_blank" class="cta-link">
+                        <span class="link-dot brilla"></span>
+                        brillaprep.org
                     </a>
-                    <a href="https://ea.trademetricspro.com" target="_blank" class="platform-pill">
-                        <span class="pill-dot trade"></span>
-                        <span>ea.trademetricspro.com</span>
+                    <a href="https://ea.trademetricspro.com" target="_blank" class="cta-link">
+                        <span class="link-dot trade"></span>
+                        ea.trademetricspro.com
                     </a>
                 </div>
+                <p class="cta-tagline animate-in delay-5">
+                    Building systems that outlive us.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">
-                    <strong>Building Systems That Outlive Us</strong>
-                </p>
-                <p class="footer-copyright">
-                    Partnership Proposal for Lynx Group & ACN | December 2024
-                </p>
-                <p class="footer-confidential">
-                    This presentation is confidential and intended solely for Lynx Group representatives.
-                </p>
-            </div>
-        </div>
-    </footer>
+    </main>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint" id="keyboardHint">
+        <span>Use</span>
+        <div class="key">←</div>
+        <div class="key">→</div>
+        <span>to navigate</span>
+    </div>
 
     <script src="script.js"></script>
 </body>
