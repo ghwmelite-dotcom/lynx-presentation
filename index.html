@@ -20,49 +20,30 @@
     <!-- Grain Overlay -->
     <div class="grain"></div>
 
-    <!-- Ambient Light -->
-    <div class="ambient-light"></div>
-
-    <!-- Progress -->
-    <div class="progress" id="progress">
-        <svg viewBox="0 0 36 36">
-            <circle class="progress-bg" cx="18" cy="18" r="16"/>
-            <circle class="progress-bar" cx="18" cy="18" r="16" id="progressCircle"/>
-        </svg>
-        <span class="progress-text" id="progressText">1</span>
-    </div>
-
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-brand">
             <span class="brand-mark"></span>
             <span class="brand-text">Proposal</span>
         </div>
-        <div class="nav-controls">
-            <button class="nav-btn" id="prevBtn" disabled>
-                <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="nav-btn" id="nextBtn">
-                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-        </div>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
     </nav>
 
-    <!-- Presentation -->
-    <main class="slides" id="slides">
+    <!-- Main Content -->
+    <main>
 
-        <!-- Slide 1: Hero -->
-        <section class="slide active" data-theme="dark">
-            <div class="slide-inner">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
                 <div class="hero-content">
-                    <p class="overline reveal">Partnership Proposal</p>
-                    <h1 class="hero-title reveal reveal-delay-1">
+                    <p class="overline fade-in">Partnership Proposal</p>
+                    <h1 class="hero-title fade-in">
                         <span class="line">The future of</span>
                         <span class="line"><em>African tech</em></span>
                         <span class="line">deserves a voice.</span>
                     </h1>
-                    <p class="hero-sub reveal reveal-delay-2">
-                        A partnership proposal for Lynx Group & ACN
+                    <p class="hero-sub fade-in">
+                        A proposal for Lynx Group & ACN
                     </p>
                 </div>
                 <div class="hero-visual">
@@ -70,27 +51,24 @@
                     <div class="orb orb-2"></div>
                     <div class="orb orb-3"></div>
                 </div>
-                <div class="scroll-cue reveal reveal-delay-3">
-                    <span>Navigate with arrow keys</span>
-                    <div class="arrow-keys">
-                        <span class="key">&larr;</span>
-                        <span class="key">&rarr;</span>
-                    </div>
-                </div>
+                <a href="#proposition" class="scroll-cue fade-in">
+                    <span>Scroll to explore</span>
+                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                </a>
             </div>
         </section>
 
-        <!-- Slide 2: The Ask -->
-        <section class="slide" data-theme="dark">
-            <div class="slide-inner centered">
-                <p class="overline reveal">The Proposition</p>
-                <h2 class="display reveal reveal-delay-1">
-                    I want Lynx to<br><em>represent me.</em>
+        <!-- The Proposition -->
+        <section class="section" id="proposition">
+            <div class="container container-narrow">
+                <p class="overline fade-in">The Proposition</p>
+                <h2 class="display fade-in">
+                    I want Lynx to <em>represent me.</em>
                 </h2>
-                <p class="body-large reveal reveal-delay-2">
+                <p class="body-large fade-in">
                     I'm a Ghanaian tech founder building two platforms that are solving real problems. I want Lynx to leverage your network, media connections, and business expertise to bring my platforms to Ghana first, then scale across Africa and beyond.
                 </p>
-                <div class="chips reveal reveal-delay-3">
+                <div class="chips fade-in">
                     <div class="chip">
                         <span class="chip-indicator brilla"></span>
                         <span class="chip-text">BrillaPrep</span>
@@ -105,14 +83,14 @@
             </div>
         </section>
 
-        <!-- Slide 3: Context -->
-        <section class="slide" data-theme="dark">
-            <div class="slide-inner centered">
-                <p class="overline reveal">The Insight</p>
-                <h2 class="display reveal reveal-delay-1">
-                    Tech founders are<br><em>the new artists.</em>
+        <!-- The Context -->
+        <section class="section section-dark" id="context">
+            <div class="container container-narrow">
+                <p class="overline fade-in">The Insight</p>
+                <h2 class="display fade-in">
+                    Tech founders are <em>the new artists.</em>
                 </h2>
-                <div class="comparison reveal reveal-delay-2">
+                <div class="comparison fade-in">
                     <div class="compare-col">
                         <h4>Artists</h4>
                         <ul>
@@ -133,295 +111,176 @@
                         </ul>
                     </div>
                 </div>
-                <p class="body-large muted reveal reveal-delay-3">
+                <p class="body-large muted fade-in">
                     Both create lasting value. Both deserve strategic representation and professional management.
                 </p>
             </div>
         </section>
 
-        <!-- Slide 4: BrillaPrep Intro -->
-        <section class="slide" data-theme="brilla">
-            <div class="slide-inner split">
-                <div class="split-content">
-                    <div class="platform-brand reveal">
+        <!-- BrillaPrep Section -->
+        <section class="section section-brilla" id="brillaprep">
+            <div class="container">
+                <div class="platform-header fade-in">
+                    <div class="platform-brand">
                         <div class="platform-icon brilla">B</div>
-                        <span>brillaprep.org</span>
+                        <div class="platform-info">
+                            <span class="platform-name">BrillaPrep</span>
+                            <span class="platform-url">brillaprep.org</span>
+                        </div>
                     </div>
-                    <h2 class="title reveal reveal-delay-1">
-                        The AI-powered study<br>companion for <em>every</em><br>Ghanaian student.
+                    <a href="https://brillaprep.org" target="_blank" class="platform-link">
+                        Visit Site
+                        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+
+                <div class="platform-hero fade-in">
+                    <h2 class="display">
+                        The AI-powered study companion for <em>every</em> Ghanaian student.
                     </h2>
-                    <p class="body reveal reveal-delay-2">
+                    <p class="body-large">
                         BrillaPrep is a comprehensive exam preparation platform designed specifically for students preparing for WASSCE, BECE, and the National Science & Maths Quiz (NSMQ). We combine official past questions with AI-powered practice to help students excel in their exams.
                     </p>
-                    <div class="tags reveal reveal-delay-3">
-                        <span class="tag">WASSCE</span>
-                        <span class="tag">BECE</span>
-                        <span class="tag">NSMQ</span>
-                        <span class="tag">AI Practice</span>
-                    </div>
                 </div>
-                <div class="split-visual">
-                    <div class="device-phone reveal reveal-delay-2">
-                        <div class="phone-notch"></div>
-                        <div class="phone-content">
-                            <div class="app-ui">
-                                <div class="app-nav">
-                                    <span class="app-icon">B</span>
-                                    <span>BrillaPrep</span>
-                                </div>
-                                <div class="app-body">
-                                    <h3>Ready to excel?</h3>
-                                    <p>Choose your exam</p>
-                                    <div class="app-cards">
-                                        <div class="app-card">WASSCE</div>
-                                        <div class="app-card">BECE</div>
-                                        <div class="app-card">NSMQ</div>
-                                    </div>
-                                </div>
-                                <div class="app-btn">Start Practice</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Slide 5: BrillaPrep Features -->
-        <section class="slide" data-theme="brilla">
-            <div class="slide-inner centered">
-                <p class="overline reveal">Platform Features</p>
-                <h2 class="display reveal reveal-delay-1">
-                    Everything a student needs<br>to <em>succeed.</em>
-                </h2>
-                <ul class="feature-list reveal reveal-delay-2">
-                    <li>
-                        <span class="feature-icon">&#128218;</span>
-                        <div class="feature-content">
-                            <strong>Official Past Questions Library</strong>
-                            <span>Access authentic WAEC past questions from 2010-2024 across all major subjects including Mathematics, English, Science, and more.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon">&#129302;</span>
-                        <div class="feature-content">
-                            <strong>AI-Powered Practice Mode</strong>
-                            <span>Our AI generates unlimited practice questions in the exact style and difficulty of real exams, with detailed explanations for every answer.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon">&#128241;</span>
-                        <div class="feature-content">
-                            <strong>Offline Mode Access</strong>
-                            <span>Download questions and study materials for offline use. Perfect for students in areas with limited internet connectivity.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon">&#128200;</span>
-                        <div class="feature-content">
-                            <strong>Performance Analytics</strong>
-                            <span>Track your progress with detailed analytics. See which subjects need more attention and watch your scores improve over time.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Slide 6: BrillaPrep Market -->
-        <section class="slide" data-theme="brilla">
-            <div class="slide-inner centered">
-                <p class="overline reveal">The Market Opportunity</p>
-                <div class="mega-stat reveal reveal-delay-1">
-                    <span class="mega-number" data-count="900000">0</span>
-                </div>
-                <p class="body-large reveal reveal-delay-2">
-                    students sit for WASSCE and BECE yearly in Ghana alone. Most rely on expensive private tutors or outdated materials. BrillaPrep democratizes access to quality exam preparation.
-                </p>
-                <div class="stat-row reveal reveal-delay-3">
-                    <div class="stat-item">
-                        <span class="stat-value">5M+</span>
-                        <span class="stat-label">West Africa TAM</span>
+                <div class="features-grid fade-in">
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128218;</div>
+                        <h3>Official Past Questions</h3>
+                        <p>Access authentic WAEC past questions from 2010-2024 across all major subjects including Mathematics, English, Science, and more.</p>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-value">GHS 15-100</span>
-                        <span class="stat-label">Monthly Plans</span>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#129302;</div>
+                        <h3>AI-Powered Practice</h3>
+                        <p>Our AI generates unlimited practice questions in the exact style and difficulty of real exams, with detailed explanations for every answer.</p>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item featured">
-                        <span class="stat-value">LIVE</span>
-                        <span class="stat-label">brillaprep.org</span>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128241;</div>
+                        <h3>Offline Mode</h3>
+                        <p>Download questions and study materials for offline use. Perfect for students in areas with limited internet connectivity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128200;</div>
+                        <h3>Performance Analytics</h3>
+                        <p>Track your progress with detailed analytics. See which subjects need more attention and watch your scores improve over time.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Slide 7: BrillaPrep Why It Matters -->
-        <section class="slide" data-theme="brilla">
-            <div class="slide-inner centered">
-                <p class="overline reveal">Why It Matters</p>
-                <h2 class="display reveal reveal-delay-1">
-                    Education is the great<br><em>equalizer.</em>
-                </h2>
-                <p class="body-large reveal reveal-delay-2">
-                    In Ghana, a student's exam results determine their entire future: which university they attend, what career paths open up, and what opportunities become available. BrillaPrep ensures that every student, whether in Accra or Wa, has access to the same quality preparation.
-                </p>
-                <div class="highlight-box reveal reveal-delay-3">
+                <div class="stats-banner fade-in">
+                    <div class="stat-highlight">
+                        <span class="stat-number" data-count="900000">0</span>
+                        <span class="stat-desc">students sit for WASSCE & BECE yearly in Ghana alone</span>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-value">5M+</span>
+                            <span class="stat-label">West Africa TAM</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">GHS 15-100</span>
+                            <span class="stat-label">Monthly Plans</span>
+                        </div>
+                        <div class="stat-item featured">
+                            <span class="stat-value">LIVE</span>
+                            <span class="stat-label">brillaprep.org</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-box fade-in">
                     <h4>Our Mission</h4>
                     <p>To give every Ghanaian student the tools they need to achieve their academic dreams, regardless of their location or financial background. Quality education should never be a privilege reserved for the few.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 8: TradeMetricsPro Intro -->
-        <section class="slide" data-theme="trade">
-            <div class="slide-inner split reverse">
-                <div class="split-content">
-                    <div class="platform-brand reveal">
+        <!-- TradeMetricsPro Section -->
+        <section class="section section-trade" id="trademetricspro">
+            <div class="container">
+                <div class="platform-header fade-in">
+                    <div class="platform-brand">
                         <div class="platform-icon trade">T</div>
-                        <span>ea.trademetricspro.com</span>
+                        <div class="platform-info">
+                            <span class="platform-name">TradeMetricsPro</span>
+                            <span class="platform-url">ea.trademetricspro.com</span>
+                        </div>
                     </div>
-                    <h2 class="title reveal reveal-delay-1">
-                        Professional trading bot<br>development for the<br><em>global market.</em>
+                    <a href="https://ea.trademetricspro.com" target="_blank" class="platform-link">
+                        Visit Site
+                        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+
+                <div class="platform-hero fade-in">
+                    <h2 class="display">
+                        Professional trading bot development for the <em>global market.</em>
                     </h2>
-                    <p class="body reveal reveal-delay-2">
+                    <p class="body-large">
                         TradeMetricsPro is a professional algorithmic trading development service. We transform trading strategies and ideas into fully automated Expert Advisors (EAs) for MetaTrader 4 and MetaTrader 5 platforms, serving traders worldwide.
                     </p>
-                    <div class="tags reveal reveal-delay-3">
-                        <span class="tag">MT4/MT5</span>
-                        <span class="tag">Custom EAs</span>
-                        <span class="tag">Pine Script</span>
-                        <span class="tag">Backtesting</span>
-                    </div>
                 </div>
-                <div class="split-visual">
-                    <div class="device-dashboard reveal reveal-delay-2">
-                        <div class="dash-chrome">
-                            <div class="chrome-dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <div class="chrome-url">ea.trademetricspro.com</div>
-                        </div>
-                        <div class="dash-body">
-                            <div class="dash-header">
-                                <span class="dash-icon">T</span>
-                                <span>Dashboard</span>
-                            </div>
-                            <div class="dash-metrics">
-                                <div class="metric">
-                                    <span class="metric-label">Traders</span>
-                                    <span class="metric-value">200+</span>
-                                </div>
-                                <div class="metric highlight">
-                                    <span class="metric-label">Top Return</span>
-                                    <span class="metric-value">+127%</span>
-                                </div>
-                            </div>
-                            <div class="dash-chart">
-                                <svg viewBox="0 0 200 50" preserveAspectRatio="none">
-                                    <path class="chart-line" d="M0,45 C20,42 40,38 60,30 S100,15 140,12 S180,8 200,5"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Slide 9: TradeMetricsPro Services -->
-        <section class="slide" data-theme="trade">
-            <div class="slide-inner centered">
-                <p class="overline reveal">Our Services</p>
-                <h2 class="display reveal reveal-delay-1">
-                    From strategy to<br><em>automated execution.</em>
-                </h2>
-                <ul class="feature-list reveal reveal-delay-2">
-                    <li>
-                        <span class="feature-icon trade-icon">&#128202;</span>
-                        <div class="feature-content">
-                            <strong>Custom EA Development</strong>
-                            <span>We build fully automated Expert Advisors tailored to your exact trading strategy. Every EA is optimized for performance, risk management, and reliability.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon trade-icon">&#128736;</span>
-                        <div class="feature-content">
-                            <strong>Strategy Conversion</strong>
-                            <span>Have a profitable manual strategy? We convert it into an automated system that trades 24/7 without emotional interference or human error.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon trade-icon">&#128201;</span>
-                        <div class="feature-content">
-                            <strong>Comprehensive Backtesting</strong>
-                            <span>Every EA undergoes rigorous backtesting across multiple market conditions, timeframes, and currency pairs to ensure consistent performance.</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="feature-icon trade-icon">&#128295;</span>
-                        <div class="feature-content">
-                            <strong>Ongoing Support & Optimization</strong>
-                            <span>Markets evolve, and so should your trading bots. We provide ongoing support, updates, and optimization services for all our clients.</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Slide 10: TradeMetricsPro Numbers -->
-        <section class="slide" data-theme="trade">
-            <div class="slide-inner centered">
-                <p class="overline reveal">Global Reach</p>
-                <div class="mega-stat reveal reveal-delay-1">
-                    <span class="mega-number" data-count="200">0</span>
-                    <span class="mega-suffix">+</span>
-                </div>
-                <p class="body-large reveal reveal-delay-2">
-                    traders served across the globe, from individual retail traders to professional trading firms. Our clients span North America, Europe, Asia, and Africa.
-                </p>
-                <div class="stat-row reveal reveal-delay-3">
-                    <div class="stat-item">
-                        <span class="stat-value">2-4 weeks</span>
-                        <span class="stat-label">Avg. Delivery</span>
+                <div class="features-grid fade-in">
+                    <div class="feature-card">
+                        <div class="feature-icon trade-icon">&#128202;</div>
+                        <h3>Custom EA Development</h3>
+                        <p>We build fully automated Expert Advisors tailored to your exact trading strategy. Every EA is optimized for performance, risk management, and reliability.</p>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-value">$500+</span>
-                        <span class="stat-label">Per Project</span>
+                    <div class="feature-card">
+                        <div class="feature-icon trade-icon">&#128736;</div>
+                        <h3>Strategy Conversion</h3>
+                        <p>Have a profitable manual strategy? We convert it into an automated system that trades 24/7 without emotional interference or human error.</p>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item featured">
-                        <span class="stat-value">LIVE</span>
-                        <span class="stat-label">ea.trademetricspro.com</span>
+                    <div class="feature-card">
+                        <div class="feature-icon trade-icon">&#128201;</div>
+                        <h3>Comprehensive Backtesting</h3>
+                        <p>Every EA undergoes rigorous backtesting across multiple market conditions, timeframes, and currency pairs to ensure consistent performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon trade-icon">&#128295;</div>
+                        <h3>Ongoing Support</h3>
+                        <p>Markets evolve, and so should your trading bots. We provide ongoing support, updates, and optimization services for all our clients.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Slide 11: TradeMetricsPro Advantage -->
-        <section class="slide" data-theme="trade">
-            <div class="slide-inner centered">
-                <p class="overline reveal">The Advantage</p>
-                <h2 class="display reveal reveal-delay-1">
-                    Built by traders,<br><em>for traders.</em>
-                </h2>
-                <p class="body-large reveal reveal-delay-2">
-                    Unlike generic software development agencies, we understand the nuances of forex trading, risk management, and what makes a strategy profitable. Our team combines deep programming expertise with real trading experience.
-                </p>
-                <div class="highlight-box reveal reveal-delay-3">
+                <div class="stats-banner fade-in">
+                    <div class="stat-highlight">
+                        <span class="stat-number" data-count="200">0</span>
+                        <span class="stat-suffix">+</span>
+                        <span class="stat-desc">traders served across the globe</span>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-value">2-4 weeks</span>
+                            <span class="stat-label">Avg. Delivery</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">$500+</span>
+                            <span class="stat-label">Per Project</span>
+                        </div>
+                        <div class="stat-item featured trade-featured">
+                            <span class="stat-value">LIVE</span>
+                            <span class="stat-label">ea.trademetricspro.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-box fade-in">
                     <h4>What Sets Us Apart</h4>
                     <p>We don't just code your strategy; we help you refine it. Every project includes a consultation phase where we analyze your approach, identify potential issues, and suggest optimizations before writing a single line of code.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Slide 12: Win-Win -->
-        <section class="slide" data-theme="dark">
-            <div class="slide-inner">
-                <p class="overline reveal centered-text">The Partnership</p>
-                <h2 class="display centered-text reveal reveal-delay-1">
-                    A win for <em>both</em> sides.
-                </h2>
-                <div class="benefits-grid reveal reveal-delay-2">
+        <!-- Partnership Benefits -->
+        <section class="section" id="partnership">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="overline">The Partnership</p>
+                    <h2 class="display">A win for <em>both</em> sides.</h2>
+                </div>
+
+                <div class="benefits-grid fade-in">
                     <div class="benefit-card">
                         <div class="benefit-header lynx">
                             <h3>What Lynx Gets</h3>
@@ -496,14 +355,15 @@
             </div>
         </section>
 
-        <!-- Slide 13: Roadmap -->
-        <section class="slide" data-theme="dark">
-            <div class="slide-inner centered">
-                <p class="overline reveal">The Vision</p>
-                <h2 class="display reveal reveal-delay-1">
-                    Ghana first.<br><em>Then the world.</em>
-                </h2>
-                <div class="timeline reveal reveal-delay-2">
+        <!-- Roadmap -->
+        <section class="section section-dark" id="roadmap">
+            <div class="container container-narrow">
+                <div class="section-header fade-in">
+                    <p class="overline">The Vision</p>
+                    <h2 class="display">Ghana first. <em>Then the world.</em></h2>
+                </div>
+
+                <div class="timeline fade-in">
                     <div class="timeline-step active">
                         <div class="step-number">01</div>
                         <div class="step-content">
@@ -511,7 +371,6 @@
                             <p>Establish BrillaPrep as the leading exam prep platform. Build partnerships with schools and educational institutions.</p>
                         </div>
                     </div>
-                    <div class="timeline-connector"></div>
                     <div class="timeline-step">
                         <div class="step-number">02</div>
                         <div class="step-content">
@@ -519,7 +378,6 @@
                             <p>Expand to Nigeria, Ivory Coast, Sierra Leone, and other WASSCE-participating countries with localized content.</p>
                         </div>
                     </div>
-                    <div class="timeline-connector"></div>
                     <div class="timeline-step">
                         <div class="step-number">03</div>
                         <div class="step-content">
@@ -531,20 +389,20 @@
             </div>
         </section>
 
-        <!-- Slide 14: CTA -->
-        <section class="slide" data-theme="cta">
-            <div class="slide-inner centered">
-                <h2 class="display-large reveal">
-                    Let's make<br><em>history.</em>
+        <!-- CTA -->
+        <section class="section section-cta" id="contact">
+            <div class="container container-narrow">
+                <h2 class="display-large fade-in">
+                    Let's make <em>history.</em>
                 </h2>
-                <p class="body-large reveal reveal-delay-1">
+                <p class="body-large fade-in">
                     Richie built Lynx by seeing what Ghana's creative industry <em>could become</em>. This is that same moment for tech. Let's work together to show Africa and the world what Ghanaian tech founders can achieve.
                 </p>
-                <a href="mailto:your@email.com?subject=Partnership Proposal - Let's Talk" class="cta-button reveal reveal-delay-2">
+                <a href="mailto:ohwpstudios@gmail.com?subject=Partnership Proposal - Let's Talk" class="cta-button fade-in">
                     <span>Start the conversation</span>
                     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
-                <div class="cta-links reveal reveal-delay-3">
+                <div class="cta-links fade-in">
                     <a href="https://brillaprep.org" target="_blank" class="cta-link">
                         <span class="link-dot brilla"></span>
                         brillaprep.org
@@ -554,14 +412,18 @@
                         ea.trademetricspro.com
                     </a>
                 </div>
-                <p class="tagline reveal reveal-delay-4">Building systems that outlive us.</p>
+                <p class="tagline fade-in">Building systems that outlive us.</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Slide Dots -->
-    <div class="dots" id="dots"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Partnership Proposal. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
