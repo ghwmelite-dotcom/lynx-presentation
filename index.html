@@ -33,9 +33,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=3.3">
+    <link rel="stylesheet" href="styles.css?v=3.4">
 </head>
 <body>
+    <!-- Screen Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" class="loader-icon">
+                    <defs>
+                        <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a855f7"/>
+                            <stop offset="50%" style="stop-color:#6366f1"/>
+                            <stop offset="100%" style="stop-color:#06b6d4"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="32" fill="none" stroke="url(#loaderGrad)" stroke-width="1" class="loader-ring" opacity="0.3"/>
+                    <path d="M35 28 L35 72 L65 72" fill="none" stroke="url(#loaderGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" class="loader-l"/>
+                    <circle cx="65" cy="42" r="6" fill="url(#loaderGrad)" class="loader-dot"/>
+                </svg>
+            </div>
+            <div class="loader-text">
+                <span class="loader-word">LYNX</span>
+                <span class="loader-divider">×</span>
+                <span class="loader-word">PROPOSAL</span>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
@@ -461,6 +489,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=3.4"></script>
 </body>
 </html>

@@ -823,6 +823,42 @@ class FloatingParallax {
 }
 
 // ==========================================
+// Screen Loader
+// ==========================================
+class ScreenLoader {
+    constructor() {
+        this.loader = document.getElementById('loader');
+        this.minDisplayTime = 2500; // Minimum time to show loader
+        this.startTime = Date.now();
+        this.init();
+    }
+
+    init() {
+        // Wait for everything to load
+        window.addEventListener('load', () => this.hideLoader());
+    }
+
+    hideLoader() {
+        const elapsed = Date.now() - this.startTime;
+        const remainingTime = Math.max(0, this.minDisplayTime - elapsed);
+
+        setTimeout(() => {
+            if (this.loader) {
+                this.loader.classList.add('loaded');
+
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    this.loader.remove();
+                }, 800);
+            }
+        }, remainingTime);
+    }
+}
+
+// Initialize loader immediately
+new ScreenLoader();
+
+// ==========================================
 // Initialize Everything
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
