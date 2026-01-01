@@ -622,6 +622,207 @@ class ScrollProgress {
 }
 
 // ==========================================
+// Spotlight Effect
+// ==========================================
+class SpotlightEffect {
+    constructor() {
+        this.spotlight = document.getElementById('spotlight');
+        if (!this.spotlight) return;
+
+        this.mouse = { x: 0, y: 0 };
+        this.current = { x: 0, y: 0 };
+        this.init();
+    }
+
+    init() {
+        document.addEventListener('mousemove', (e) => {
+            this.mouse.x = e.clientX;
+            this.mouse.y = e.clientY;
+            this.spotlight.classList.add('active');
+        });
+
+        document.addEventListener('mouseleave', () => {
+            this.spotlight.classList.remove('active');
+        });
+
+        this.animate();
+    }
+
+    animate() {
+        // Smooth follow
+        this.current.x += (this.mouse.x - this.current.x) * 0.08;
+        this.current.y += (this.mouse.y - this.current.y) * 0.08;
+
+        this.spotlight.style.left = `${this.current.x}px`;
+        this.spotlight.style.top = `${this.current.y}px`;
+
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// ==========================================
+// Ripple Click Effect
+// ==========================================
+class RippleEffect {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        const rippleElements = document.querySelectorAll('.cta-button, .nav-cta, .platform-link, .chip, .cta-link');
+
+        rippleElements.forEach(el => {
+            el.style.position = 'relative';
+            el.style.overflow = 'hidden';
+
+            el.addEventListener('click', (e) => this.createRipple(e, el));
+        });
+    }
+
+    createRipple(e, el) {
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 2;
+
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+
+        el.appendChild(ripple);
+
+        setTimeout(() => ripple.remove(), 600);
+    }
+}
+
+// ==========================================
+// Section Color Shift on Scroll
+// ==========================================
+class SectionColorShift {
+    constructor() {
+        this.sections = document.querySelectorAll('.section');
+        this.init();
+    }
+
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionType = this.getSectionType(entry.target);
+                    this.updateRootColors(sectionType, entry.intersectionRatio);
+                }
+            });
+        }, {
+            threshold: [0, 0.25, 0.5, 0.75, 1]
+        });
+
+        this.sections.forEach(section => observer.observe(section));
+    }
+
+    getSectionType(section) {
+        if (section.classList.contains('section-brilla')) return 'brilla';
+        if (section.classList.contains('section-trade')) return 'trade';
+        if (section.classList.contains('section-cta')) return 'cta';
+        return 'default';
+    }
+
+    updateRootColors(type, ratio) {
+        const root = document.documentElement;
+
+        switch(type) {
+            case 'brilla':
+                root.style.setProperty('--active-glow', `rgba(99, 102, 241, ${0.15 * ratio})`);
+                break;
+            case 'trade':
+                root.style.setProperty('--active-glow', `rgba(16, 185, 129, ${0.15 * ratio})`);
+                break;
+            case 'cta':
+                root.style.setProperty('--active-glow', `rgba(168, 85, 247, ${0.2 * ratio})`);
+                break;
+            default:
+                root.style.setProperty('--active-glow', 'transparent');
+        }
+    }
+}
+
+// ==========================================
+// Enhanced Link Glow
+// ==========================================
+class LinkGlow {
+    constructor() {
+        this.links = document.querySelectorAll('.platform-link, .cta-link');
+        this.init();
+    }
+
+    init() {
+        this.links.forEach(link => {
+            link.addEventListener('mousemove', (e) => {
+                const rect = link.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                link.style.setProperty('--glow-x', `${x}%`);
+                link.style.setProperty('--glow-y', `${y}%`);
+            });
+        });
+    }
+}
+
+// ==========================================
+// Split Text Animation
+// ==========================================
+class SplitTextReveal {
+    constructor() {
+        this.elements = document.querySelectorAll('.hero-title .line');
+        this.init();
+    }
+
+    init() {
+        this.elements.forEach((line, lineIndex) => {
+            const text = line.innerHTML;
+            const chars = text.split('');
+
+            // Only process if not already wrapped
+            if (!line.querySelector('.char')) {
+                line.innerHTML = chars.map((char, i) => {
+                    if (char === ' ') return ' ';
+                    if (char === '<') return char; // Skip HTML tags
+                    const delay = (lineIndex * 0.1) + (i * 0.02);
+                    return `<span class="char" style="animation-delay: ${delay}s">${char}</span>`;
+                }).join('');
+            }
+        });
+    }
+}
+
+// ==========================================
+// Floating Elements Parallax
+// ==========================================
+class FloatingParallax {
+    constructor() {
+        this.blobs = document.querySelectorAll('.blob');
+        this.mouse = { x: 0, y: 0 };
+        this.init();
+    }
+
+    init() {
+        document.addEventListener('mousemove', (e) => {
+            this.mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+            this.mouse.y = (e.clientY / window.innerHeight - 0.5) * 2;
+            this.update();
+        });
+    }
+
+    update() {
+        this.blobs.forEach((blob, index) => {
+            const speed = (index + 1) * 15;
+            const x = this.mouse.x * speed;
+            const y = this.mouse.y * speed;
+            blob.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    }
+}
+
+// ==========================================
 // Initialize Everything
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -634,6 +835,8 @@ document.addEventListener('DOMContentLoaded', () => {
         new CardTilt();
         new ReactiveOrbs();
         new CursorGlowTrail();
+        new SpotlightEffect();
+        new FloatingParallax();
     }
 
     // Core functionality
@@ -647,6 +850,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new GlowingButtons();
     new SectionParallax();
     new ScrollProgress();
+    new RippleEffect();
+    new SectionColorShift();
+    new LinkGlow();
 
     // Delayed effects
     setTimeout(() => {

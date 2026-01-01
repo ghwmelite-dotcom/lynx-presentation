@@ -90,7 +90,7 @@ body {
 }
 
 /* ==========================================
-   AURORA BACKGROUND SYSTEM
+   AURORA BACKGROUND SYSTEM - ENHANCED
    ========================================== */
 .aurora {
     position: fixed;
@@ -129,6 +129,99 @@ body {
     33% { transform: translate(5%, -3%) rotate(5deg) scale(1.05); }
     66% { transform: translate(-3%, 5%) rotate(-3deg) scale(0.98); }
     100% { transform: translate(2%, 2%) rotate(2deg) scale(1.02); }
+}
+
+/* ==========================================
+   MORPHING BLOB SHAPES
+   ========================================== */
+.blob-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: blobMorph 20s ease-in-out infinite;
+}
+
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, var(--accent), var(--brilla));
+    top: 10%;
+    left: 60%;
+    animation: blobMorph 25s ease-in-out infinite, blobFloat1 30s ease-in-out infinite;
+}
+
+.blob-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, var(--brilla), var(--aurora-1));
+    top: 50%;
+    left: 20%;
+    animation: blobMorph 20s ease-in-out infinite reverse, blobFloat2 25s ease-in-out infinite;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--trade), var(--brilla));
+    top: 70%;
+    left: 70%;
+    animation: blobMorph 18s ease-in-out infinite, blobFloat3 20s ease-in-out infinite;
+}
+
+@keyframes blobMorph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    50% { border-radius: 50% 60% 30% 60% / 30% 40% 70% 60%; }
+    75% { border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%; }
+}
+
+@keyframes blobFloat1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-50px, 30px) scale(1.1); }
+    66% { transform: translate(30px, -20px) scale(0.95); }
+}
+
+@keyframes blobFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -40px) scale(1.15); }
+}
+
+@keyframes blobFloat3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-30px, -30px) scale(1.05); }
+    66% { transform: translate(20px, 20px) scale(0.9); }
+}
+
+/* ==========================================
+   CURSOR SPOTLIGHT EFFECT
+   ========================================== */
+.spotlight {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.spotlight.active {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .spotlight { display: none; }
 }
 
 /* Mesh Gradient Overlay */
@@ -1193,18 +1286,25 @@ body {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 24px;
-    transition: all 0.4s var(--ease);
+    transition: all 0.5s var(--ease);
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
     perspective: 1000px;
+    animation: cardBreathe 8s ease-in-out infinite;
+    animation-delay: calc(var(--card-index, 0) * 0.5s);
+}
+
+@keyframes cardBreathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
 }
 
 .feature-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.06), transparent 40%);
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.1), transparent 40%);
     opacity: 0;
     transition: opacity 0.4s;
     pointer-events: none;
@@ -1213,27 +1313,55 @@ body {
 .feature-card::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -2px;
     border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent, rgba(168, 85, 247, 0.2));
+    padding: 2px;
+    background: linear-gradient(var(--border-angle, 0deg), var(--accent), var(--brilla), var(--trade), var(--accent));
+    background-size: 400% 400%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0;
-    transition: opacity 0.4s;
+    transition: opacity 0.5s;
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.02);
     border-color: transparent;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(168, 85, 247, 0.15);
+    animation: none;
 }
 
 .feature-card:hover::before,
 .feature-card:hover::after {
     opacity: 1;
+}
+
+/* Ripple effect on click */
+.feature-card .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.3);
+    transform: scale(0);
+    animation: rippleEffect 0.6s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
 }
 
 .feature-icon {
@@ -2677,6 +2805,404 @@ body {
     .cta-button:active {
         transform: scale(0.98);
         opacity: 0.9;
+    }
+}
+
+/* ==========================================
+   SPECTACULAR LIQUID BUTTON EFFECTS
+   ========================================== */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(
+        from var(--button-angle, 0deg),
+        var(--accent) 0deg,
+        var(--brilla) 60deg,
+        var(--aurora-1) 120deg,
+        var(--trade) 180deg,
+        var(--brilla) 240deg,
+        var(--accent) 300deg,
+        var(--accent) 360deg
+    );
+    animation: liquidRotate 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease);
+    z-index: -1;
+}
+
+.cta-button:hover::before {
+    opacity: 1;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: linear-gradient(135deg, rgba(3, 3, 3, 0.95), rgba(3, 3, 3, 0.8));
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@keyframes liquidRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Liquid Blob Inside Button */
+.cta-button .liquid-blob {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 50%),
+                radial-gradient(circle at 70% 70%, var(--brilla-glow), transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s var(--ease);
+    pointer-events: none;
+    filter: blur(20px);
+}
+
+.cta-button:hover .liquid-blob {
+    opacity: 0.5;
+    animation: blobPulse 2s ease-in-out infinite;
+}
+
+@keyframes blobPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ==========================================
+   HOLOGRAPHIC SHIMMER CARDS
+   ========================================== */
+.feature-card,
+.benefit-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before,
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.03),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: shimmer 8s ease-in-out infinite;
+}
+
+.feature-card:nth-child(2)::before { animation-delay: 0.5s; }
+.feature-card:nth-child(3)::before { animation-delay: 1s; }
+.feature-card:nth-child(4)::before { animation-delay: 1.5s; }
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    50%, 100% { left: 200%; }
+}
+
+/* Holographic Rainbow Edge */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+        var(--holo-angle, 135deg),
+        rgba(168, 85, 247, 0.4),
+        rgba(99, 102, 241, 0.3),
+        rgba(6, 182, 212, 0.3),
+        rgba(16, 185, 129, 0.3),
+        rgba(168, 85, 247, 0.4)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease);
+    pointer-events: none;
+}
+
+.feature-card:hover::after {
+    opacity: 1;
+    animation: holoShift 3s linear infinite;
+}
+
+@keyframes holoShift {
+    from { --holo-angle: 135deg; }
+    to { --holo-angle: 495deg; }
+}
+
+/* ==========================================
+   RIPPLE CLICK EFFECT
+   ========================================== */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    transform: scale(0);
+    animation: rippleEffect 0.6s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   ENHANCED TEXT GLOW EFFECTS
+   ========================================== */
+.display em,
+.display-large em {
+    position: relative;
+    font-style: italic;
+    color: transparent;
+    background: linear-gradient(135deg, var(--accent-light), var(--brilla-light), var(--aurora-1));
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: textGradientShift 5s ease-in-out infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes textGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.display em::after,
+.display-large em::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: blur(20px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* ==========================================
+   FLOATING ANIMATION ENHANCEMENTS
+   ========================================== */
+.orb {
+    animation: orbFloat 10s ease-in-out infinite, orbPulse 4s ease-in-out infinite;
+}
+
+.orb-1 { animation-delay: 0s, 0s; }
+.orb-2 { animation-delay: -3.3s, -1.3s; }
+.orb-3 { animation-delay: -6.6s, -2.6s; }
+
+@keyframes orbPulse {
+    0%, 100% {
+        filter: blur(60px);
+        opacity: 0.3;
+    }
+    50% {
+        filter: blur(80px);
+        opacity: 0.5;
+    }
+}
+
+/* ==========================================
+   SCROLL-DRIVEN SECTION REVEALS
+   ========================================== */
+.section {
+    --section-progress: 0;
+}
+
+.section-header {
+    transform: translateY(calc(20px * (1 - var(--section-progress, 1))));
+    opacity: var(--section-progress, 1);
+}
+
+/* ==========================================
+   MAGNETIC HOVER GLOW
+   ========================================== */
+.platform-link,
+.nav-cta,
+.cta-link {
+    position: relative;
+}
+
+.platform-link::before,
+.cta-link::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    background: radial-gradient(
+        circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgba(168, 85, 247, 0.15),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.platform-link:hover::before,
+.cta-link:hover::before {
+    opacity: 1;
+}
+
+/* ==========================================
+   BREATHING STATS ANIMATION
+   ========================================== */
+.stat-number {
+    display: inline-block;
+    animation: statBreathe 3s ease-in-out infinite;
+}
+
+@keyframes statBreathe {
+    0%, 100% {
+        text-shadow: 0 0 20px var(--accent-glow);
+    }
+    50% {
+        text-shadow: 0 0 40px var(--accent-glow), 0 0 60px var(--brilla-glow);
+    }
+}
+
+/* ==========================================
+   ENHANCED TIMELINE EFFECTS
+   ========================================== */
+.timeline-step::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        var(--accent),
+        var(--brilla),
+        var(--aurora-1),
+        transparent
+    );
+    background-size: 100% 200%;
+    animation: timelineGlow 3s ease-in-out infinite;
+}
+
+.timeline-step:last-child::before {
+    display: none;
+}
+
+@keyframes timelineGlow {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+}
+
+.step-number {
+    position: relative;
+    z-index: 2;
+}
+
+.step-number::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    animation: stepPulse 2s ease-in-out infinite;
+}
+
+.timeline-step:hover .step-number::after,
+.timeline-step.active .step-number::after {
+    opacity: 1;
+}
+
+@keyframes stepPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* ==========================================
+   CINEMATIC SECTION DIVIDERS
+   ========================================== */
+.section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(168, 85, 247, 0.5),
+        rgba(99, 102, 241, 0.5),
+        transparent
+    );
+    opacity: 0.5;
+}
+
+.section:last-of-type::after {
+    display: none;
+}
+
+/* ==========================================
+   DYNAMIC NOISE TEXTURE
+   ========================================== */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 100% 100% at 50% 0%, rgba(168, 85, 247, 0.1), transparent 60%),
+        radial-gradient(ellipse 80% 80% at 80% 50%, rgba(99, 102, 241, 0.08), transparent 50%),
+        radial-gradient(ellipse 60% 60% at 20% 80%, rgba(6, 182, 212, 0.06), transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ==========================================
+   ENHANCED COMPARISON EQUALS
+   ========================================== */
+.compare-equals {
+    position: relative;
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--gray-500);
+    animation: equalsGlow 2s ease-in-out infinite;
+}
+
+@keyframes equalsGlow {
+    0%, 100% {
+        color: var(--gray-500);
+        text-shadow: none;
+    }
+    50% {
+        color: var(--accent);
+        text-shadow: 0 0 30px var(--accent-glow);
     }
 }
 
