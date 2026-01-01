@@ -828,7 +828,7 @@ class FloatingParallax {
 class ScreenLoader {
     constructor() {
         this.loader = document.getElementById('loader');
-        this.minDisplayTime = 2500; // Minimum time to show loader
+        this.minDisplayTime = 1200; // Minimum time to show loader
         this.startTime = Date.now();
         this.init();
     }
