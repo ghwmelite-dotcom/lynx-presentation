@@ -2815,12 +2815,28 @@ body {
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    background: linear-gradient(135deg, var(--accent), var(--brilla)) !important;
+    color: var(--white) !important;
+    border: none;
+    box-shadow: 0 0 40px var(--accent-glow), 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
+.cta-button span,
+.cta-button svg {
+    position: relative;
+    z-index: 10;
+    color: var(--white);
+}
+
+.cta-button svg {
+    stroke: var(--white);
+}
+
+/* Rotating border glow on hover */
 .cta-button::before {
     content: '';
     position: absolute;
-    inset: -100%;
+    inset: -3px;
     background: conic-gradient(
         from var(--button-angle, 0deg),
         var(--accent) 0deg,
@@ -2831,29 +2847,25 @@ body {
         var(--accent) 300deg,
         var(--accent) 360deg
     );
+    border-radius: inherit;
     animation: liquidRotate 3s linear infinite;
     opacity: 0;
     transition: opacity 0.5s var(--ease);
-    z-index: -1;
+    z-index: -2;
 }
 
 .cta-button:hover::before {
     opacity: 1;
 }
 
+/* Inner fill to show only border glow */
 .cta-button::after {
     content: '';
     position: absolute;
     inset: 2px;
-    background: linear-gradient(135deg, rgba(3, 3, 3, 0.95), rgba(3, 3, 3, 0.8));
+    background: linear-gradient(135deg, var(--accent), var(--brilla));
     border-radius: inherit;
-    z-index: 0;
-}
-
-.cta-button span,
-.cta-button svg {
-    position: relative;
-    z-index: 2;
+    z-index: -1;
 }
 
 @keyframes liquidRotate {
@@ -2861,30 +2873,9 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* Liquid Blob Inside Button */
-.cta-button .liquid-blob {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 50%),
-                radial-gradient(circle at 70% 70%, var(--brilla-glow), transparent 50%);
-    opacity: 0;
-    transition: opacity 0.5s, transform 0.5s var(--ease);
-    pointer-events: none;
-    filter: blur(20px);
-}
-
-.cta-button:hover .liquid-blob {
-    opacity: 0.5;
-    animation: blobPulse 2s ease-in-out infinite;
-}
-
-@keyframes blobPulse {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
+.cta-button:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 60px var(--accent-glow), 0 0 100px var(--brilla-glow), 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================
