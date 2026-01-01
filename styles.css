@@ -76,12 +76,7 @@ body {
     background: var(--void);
     color: var(--white);
     overflow-x: hidden;
-    cursor: none;
     min-height: 100vh;
-}
-
-@media (max-width: 768px) {
-    body { cursor: auto; }
 }
 
 ::selection {

@@ -865,13 +865,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create background effects first
     new AuroraBackground();
 
-    // Only init cursor effects on desktop
+    // Only init effects on desktop
     if (window.innerWidth > 768) {
-        new MagneticCursor();
         new CardTilt();
         new ReactiveOrbs();
-        new CursorGlowTrail();
-        new SpotlightEffect();
         new FloatingParallax();
     }
 
