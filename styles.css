@@ -2847,7 +2847,13 @@ body {
     inset: 2px;
     background: linear-gradient(135deg, rgba(3, 3, 3, 0.95), rgba(3, 3, 3, 0.8));
     border-radius: inherit;
-    z-index: -1;
+    z-index: 0;
+}
+
+.cta-button span,
+.cta-button svg {
+    position: relative;
+    z-index: 2;
 }
 
 @keyframes liquidRotate {
