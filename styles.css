@@ -2879,6 +2879,43 @@ body {
 }
 
 /* ==========================================
+   WHATSAPP ICON STYLING
+   ========================================== */
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s var(--ease), filter 0.3s;
+}
+
+.nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-cta .whatsapp-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.nav-cta:hover .whatsapp-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.5));
+}
+
+.cta-button .whatsapp-icon {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.cta-button:hover .whatsapp-icon {
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(0 0 15px rgba(37, 211, 102, 0.6));
+}
+
+/* ==========================================
    HOLOGRAPHIC SHIMMER CARDS
    ========================================== */
 .feature-card,
