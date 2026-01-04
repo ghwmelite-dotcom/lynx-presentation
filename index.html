@@ -33,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6.0">
+    <link rel="stylesheet" href="styles.css?v=6.1">
 </head>
 <body>
     <!-- Screen Loader -->
@@ -656,10 +656,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Partnership Proposal. Crafted with intention.</p>
+            <p>&copy; <span id="currentYear"></span> Partnership Proposal. Crafted with intention.</p>
         </div>
     </footer>
 
-    <script src="script.js?v=5.0"></script>
+    <script src="script.js?v=6.0"></script>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 </body>
 </html>
