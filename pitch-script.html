@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbal Pitch Script - Lynx Meeting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 1.5cm;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+            font-size: 11pt;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 10pt;
+        }
+
+        .section {
+            margin-bottom: 28px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #a855f7;
+            display: inline-block;
+        }
+
+        .version-label {
+            display: inline-block;
+            background: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 9pt;
+            font-weight: 600;
+            color: #666;
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+
+        .script-block {
+            background: #f9fafb;
+            border-left: 4px solid #a855f7;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .script-block p {
+            font-size: 10.5pt;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .script-block .label {
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #a855f7;
+            margin-bottom: 8px;
+        }
+
+        .script-block .timing {
+            font-size: 8pt;
+            color: #999;
+            float: right;
+            margin-top: -20px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fef3c7 100%);
+            padding: 0 4px;
+            border-radius: 2px;
+        }
+
+        .key-phrase {
+            font-weight: 700;
+            color: #7c3aed;
+        }
+
+        .qa-section {
+            margin-top: 32px;
+        }
+
+        .qa-item {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .qa-question {
+            font-weight: 700;
+            font-size: 10pt;
+            color: #dc2626;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .qa-question::before {
+            content: 'Q';
+            position: absolute;
+            left: 0;
+            font-weight: 800;
+            color: #dc2626;
+        }
+
+        .qa-answer {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+            color: #333;
+        }
+
+        .tips-section {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 32px;
+            page-break-inside: avoid;
+        }
+
+        .tips-section h3 {
+            font-size: 12pt;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .tips-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-section li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 10pt;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .tips-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 9pt;
+            color: #999;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .tips-section {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Verbal Pitch Script</h1>
+        <p>Lynx Office Visit — Prepared for Osborn Manuel Davies K. Hodges</p>
+    </div>
+
+    <!-- 30-Second Version -->
+    <div class="section">
+        <h2 class="section-title">The 30-Second Version</h2>
+        <span class="version-label">If you only get a moment</span>
+
+        <div class="script-block">
+            <p>
+                "Hi, I'm <span class="key-phrase">Osborn Davies</span> — I'm a tech founder and I won the <span class="highlight">Ghana Civil Service Best IT Tech Award</span> this year. I've built two live platforms: an EdTech app for WASSCE students and a FinTech service for traders globally.
+            </p>
+            <br>
+            <p>
+                Here's the thing — <span class="key-phrase">no agency in Ghana represents tech founders</span>. Musicians have representation, actors have representation, but tech founders? No one.
+            </p>
+            <br>
+            <p>
+                I think <span class="key-phrase">Lynx could be the first</span> to own that category. I've put together a proposal — can I leave you my card with the link?"
+            </p>
+        </div>
+    </div>
+
+    <!-- 2-Minute Version -->
+    <div class="section">
+        <h2 class="section-title">The 2-Minute Version</h2>
+        <span class="version-label">If you get a real conversation</span>
+
+        <div class="script-block">
+            <div class="label">Hook</div>
+            <div class="timing">~10 sec</div>
+            <p>
+                "Let me ask you something — <span class="key-phrase">who represents tech founders in Ghana?</span> Musicians have Lynx, 3Music, Black Avenue. Actors have agencies. Influencers have managers. But tech founders building real products? <span class="highlight">No one.</span>"
+            </p>
+        </div>
+
+        <div class="script-block">
+            <div class="label">Credibility</div>
+            <div class="timing">~20 sec</div>
+            <p>
+                "I'm Osborn Davies. I just won the <span class="highlight">Ghana Civil Service Best IT Tech Award for 2024/25</span>. I'm a fullstack developer, and I've built two platforms that are live right now:
+            </p>
+            <br>
+            <p>
+                • <span class="key-phrase">BrillaPrep</span> — an AI-powered exam prep platform for WASSCE and BECE students<br>
+                • <span class="key-phrase">TradeMetricsPro</span> — algorithmic trading solutions for global clients"
+            </p>
+        </div>
+
+        <div class="script-block">
+            <div class="label">The Opportunity</div>
+            <div class="timing">~30 sec</div>
+            <p>
+                "There are <span class="highlight">900,000 students</span> sitting WASSCE and BECE every year in Ghana alone. EdTech is exploding post-COVID. And no one is telling these stories — no one is positioning Ghanaian tech founders the way Lynx positions artists.
+            </p>
+            <br>
+            <p>
+                This is a <span class="key-phrase">completely open category</span>. Whoever moves first defines how it works."
+            </p>
+        </div>
+
+        <div class="script-block">
+            <div class="label">What Lynx Gets</div>
+            <div class="timing">~30 sec</div>
+            <p>
+                "For Lynx, this is <span class="key-phrase">first-mover advantage</span> in a new vertical. It's recurring revenue from SaaS subscriptions — not one-time deals. It's a global client base through TradeMetricsPro. And frankly, it's a powerful story: <span class="highlight">'Lynx expands from music into tech'</span> — that's a headline that writes itself."
+            </p>
+        </div>
+
+        <div class="script-block">
+            <div class="label">The Ask</div>
+            <div class="timing">~20 sec</div>
+            <p>
+                "I'm not asking for a decision today. I'm asking for a <span class="key-phrase">30-minute conversation</span> — maybe with Richie if he's available — to explore if this makes sense.
+            </p>
+            <br>
+            <p>
+                I've put together a detailed proposal. Here's my card with the link. Take a look, and if it resonates, let's talk."
+            </p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Q&A Section -->
+    <div class="section qa-section">
+        <h2 class="section-title">Handling Questions</h2>
+
+        <div class="qa-item">
+            <p class="qa-question">"Why would we represent a tech founder?"</p>
+            <div class="qa-answer">
+                "The skills are the same — brand building, media relationships, deal negotiation. Tech founders need visibility and credibility just like artists. The only difference is the industry, and that's exactly the opportunity."
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <p class="qa-question">"We don't know anything about tech."</p>
+            <div class="qa-answer">
+                "You don't need to. I handle the product and the technical side. What I need is what Lynx does best — connections, positioning, and amplification. You've already proven you can build careers."
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <p class="qa-question">"What's in it for us financially?"</p>
+            <div class="qa-answer">
+                "Commission on recurring SaaS revenue. As the platforms scale, that compounds. We can discuss exact terms, but the model is straightforward — you succeed when I succeed."
+            </div>
+        </div>
+
+        <div class="qa-item">
+            <p class="qa-question">"Why Lynx specifically?"</p>
+            <div class="qa-answer">
+                "Because Richie built Lynx by seeing what Ghana's creative industry <em>could become</em> before anyone else did. This is the same moment for tech. I want to work with someone who understands vision, not just transactions."
+            </div>
+        </div>
+    </div>
+
+    <!-- Practice Tips -->
+    <div class="tips-section">
+        <h3>Practice Tips</h3>
+        <ul>
+            <li><strong>Say it out loud</strong> 10+ times until it feels natural</li>
+            <li><strong>Time yourself</strong> — the 2-minute version should be under 2 minutes</li>
+            <li><strong>Don't memorize word-for-word</strong> — know the beats, not the script</li>
+            <li><strong>Pause after the hook</strong> — let it land before continuing</li>
+            <li><strong>Make eye contact</strong> when you say "Lynx could be the first"</li>
+            <li><strong>End with confidence</strong> — you're offering an opportunity, not asking for charity</li>
+        </ul>
+    </div>
+
+    <!-- Key Numbers to Remember -->
+    <div class="section" style="margin-top: 32px;">
+        <h2 class="section-title">Key Numbers to Remember</h2>
+        <div class="script-block" style="display: flex; justify-content: space-around; text-align: center;">
+            <div>
+                <strong style="font-size: 18pt; color: #a855f7;">900K</strong><br>
+                <span style="font-size: 9pt; color: #666;">WASSCE/BECE students yearly</span>
+            </div>
+            <div>
+                <strong style="font-size: 18pt; color: #a855f7;">5M+</strong><br>
+                <span style="font-size: 9pt; color: #666;">West Africa TAM</span>
+            </div>
+            <div>
+                <strong style="font-size: 18pt; color: #a855f7;">2024/25</strong><br>
+                <span style="font-size: 9pt; color: #666;">Award Year</span>
+            </div>
+            <div>
+                <strong style="font-size: 18pt; color: #a855f7;">2</strong><br>
+                <span style="font-size: 9pt; color: #666;">Live Platforms</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Full Proposal: <strong>lynx-presentation.pages.dev</strong> | WhatsApp: <strong>+233 54 012 5882</strong></p>
+        <p style="margin-top: 8px;">Good luck! You've got this. 🇬🇭</p>
+    </div>
+</body>
+</html>
