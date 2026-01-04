@@ -6892,3 +6892,451 @@ button:focus-visible {
         height: 28px;
     }
 }
+
+/* ==========================================
+   CELEBRATION ANIMATION
+   ========================================== */
+.celebration-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    animation: confettiFall 4s ease-out forwards;
+}
+
+.confetti.circle {
+    border-radius: 50%;
+}
+
+.confetti.square {
+    border-radius: 2px;
+}
+
+.confetti.star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    width: 14px;
+    height: 14px;
+}
+
+@keyframes confettiFall {
+    0% {
+        opacity: 1;
+        transform: translateY(-20px) rotate(0deg) scale(1);
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg) scale(0.5);
+    }
+}
+
+/* ==========================================
+   QR CODE SECTION
+   ========================================== */
+.qr-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.qr-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.qr-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.qr-code svg {
+    width: 100%;
+    height: 100%;
+}
+
+.qr-info {
+    text-align: left;
+}
+
+.qr-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.qr-desc {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+.print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 100px;
+    color: var(--gray-300);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.print-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.print-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .qr-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .qr-card {
+        padding: 16px 20px;
+        gap: 16px;
+    }
+
+    .qr-code {
+        width: 80px;
+        height: 80px;
+    }
+
+    .qr-label {
+        font-size: 0.9rem;
+    }
+
+    .print-btn {
+        padding: 14px 24px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .qr-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .qr-info {
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+    /* Reset */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    /* Hide non-essential elements */
+    .loader,
+    .nav,
+    .aurora,
+    .particles,
+    .orb,
+    .scroll-cue,
+    .section-nav,
+    .floating-cta,
+    .celebration-container,
+    .demo-glow,
+    .print-btn,
+    .cta-button,
+    .demo-cta-link,
+    .preview-cta,
+    .platform-link,
+    .ghana-pride,
+    .cursor-glow,
+    .cursor-trail {
+        display: none !important;
+    }
+
+    /* Base styles */
+    html, body {
+        background: white !important;
+        color: #1a1a1a !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+    }
+
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Container */
+    .container,
+    .container-narrow {
+        max-width: 100% !important;
+        padding: 0 40px !important;
+    }
+
+    /* Sections */
+    .section,
+    .hero,
+    main,
+    section {
+        background: white !important;
+        padding: 30px 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    .hero {
+        min-height: auto !important;
+        padding: 60px 0 40px !important;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6,
+    .display, .display-large, .hero-title {
+        color: #1a1a1a !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #1a1a1a !important;
+        background-clip: unset !important;
+    }
+
+    .hero-title {
+        font-size: 28pt !important;
+    }
+
+    .display, .display-large {
+        font-size: 20pt !important;
+    }
+
+    h3 {
+        font-size: 14pt !important;
+    }
+
+    h4 {
+        font-size: 12pt !important;
+    }
+
+    p, li, span, .body-large {
+        color: #333 !important;
+        font-size: 10pt !important;
+    }
+
+    .overline {
+        color: #666 !important;
+        font-size: 9pt !important;
+    }
+
+    em {
+        font-style: italic !important;
+        color: #6366f1 !important;
+    }
+
+    /* Links */
+    a {
+        color: #6366f1 !important;
+        text-decoration: underline !important;
+    }
+
+    .cta-links {
+        margin-top: 20px !important;
+    }
+
+    .cta-link {
+        display: inline !important;
+        margin-right: 20px !important;
+    }
+
+    .link-dot {
+        display: none !important;
+    }
+
+    /* Cards and boxes */
+    .feature-card,
+    .roi-card,
+    .timing-card,
+    .benefit-card,
+    .risk-item,
+    .landscape-category,
+    .landscape-opportunity,
+    .cta-action-box,
+    .urgency-box,
+    .mission-box,
+    .stats-banner {
+        background: #f8f9fa !important;
+        border: 1px solid #e0e0e0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Grids */
+    .features-grid,
+    .roi-grid,
+    .timing-grid,
+    .benefits-grid,
+    .landscape-row {
+        display: grid !important;
+        gap: 15px !important;
+    }
+
+    .features-grid,
+    .roi-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .landscape-row {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Product demos - show as simple cards */
+    .product-demo {
+        margin: 20px 0 !important;
+    }
+
+    .demo-device,
+    .demo-device-frame,
+    .demo-screen {
+        display: none !important;
+    }
+
+    /* Founder section */
+    .founder-layout {
+        display: flex !important;
+        gap: 30px !important;
+    }
+
+    .founder-image-wrapper {
+        flex: 0 0 200px !important;
+    }
+
+    .founder-image {
+        width: 200px !important;
+        height: auto !important;
+        border-radius: 10px !important;
+    }
+
+    /* QR Code - make it larger for print */
+    .qr-section {
+        margin: 30px 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    .qr-card {
+        background: #f8f9fa !important;
+        border: 1px solid #e0e0e0 !important;
+        padding: 20px !important;
+    }
+
+    .qr-code {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .qr-label, .qr-desc {
+        color: #333 !important;
+    }
+
+    /* Signature */
+    .section-signature {
+        page-break-inside: avoid !important;
+    }
+
+    .signature-name {
+        color: #1a1a1a !important;
+    }
+
+    .signature-title {
+        color: #666 !important;
+    }
+
+    .signature-badge-enhanced {
+        display: none !important;
+    }
+
+    .signature-svg {
+        display: none !important;
+    }
+
+    /* Footer */
+    .footer {
+        background: white !important;
+        border-top: 1px solid #e0e0e0 !important;
+        padding: 20px 0 !important;
+    }
+
+    .footer p {
+        color: #666 !important;
+    }
+
+    /* Risk accordion - show all answers */
+    .risk-answer {
+        max-height: none !important;
+        padding: 0 20px 20px !important;
+    }
+
+    .risk-toggle {
+        display: none !important;
+    }
+
+    /* Page breaks */
+    .section-founder,
+    .section-brilla,
+    .section-trade,
+    .section-landscape,
+    .section-roi,
+    .section-risk,
+    .section-cta {
+        page-break-before: auto !important;
+    }
+
+    /* Header for each page */
+    @page {
+        margin: 1.5cm;
+        size: A4;
+    }
+
+    @page :first {
+        margin-top: 1cm;
+    }
+}

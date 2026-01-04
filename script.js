@@ -662,6 +662,80 @@ class SignatureAnimation {
 }
 
 // ==========================================
+// Celebration Animation
+// ==========================================
+class CelebrationAnimation {
+    constructor() {
+        this.container = document.getElementById('celebrationContainer');
+        this.ctaSection = document.getElementById('contact');
+        this.hasPlayed = false;
+        this.colors = [
+            '#a855f7', // Purple
+            '#6366f1', // Indigo
+            '#22c55e', // Green
+            '#fcd116', // Yellow (Ghana)
+            '#ce1126', // Red (Ghana)
+            '#06b6d4', // Cyan
+            '#f59e0b', // Amber
+            '#ec4899'  // Pink
+        ];
+        this.shapes = ['circle', 'square', 'star'];
+
+        if (this.container && this.ctaSection) {
+            this.init();
+        }
+    }
+
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.hasPlayed) {
+                    this.hasPlayed = true;
+                    this.celebrate();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(this.ctaSection);
+    }
+
+    celebrate() {
+        // Create confetti burst
+        const particleCount = 60;
+
+        for (let i = 0; i < particleCount; i++) {
+            setTimeout(() => {
+                this.createConfetti();
+            }, i * 30);
+        }
+    }
+
+    createConfetti() {
+        const confetti = document.createElement('div');
+        const shape = this.shapes[Math.floor(Math.random() * this.shapes.length)];
+        const color = this.colors[Math.floor(Math.random() * this.colors.length)];
+
+        confetti.className = `confetti ${shape}`;
+        confetti.style.backgroundColor = color;
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDuration = `${3 + Math.random() * 2}s`;
+        confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+
+        // Random size
+        const size = 8 + Math.random() * 8;
+        confetti.style.width = `${size}px`;
+        confetti.style.height = `${size}px`;
+
+        this.container.appendChild(confetti);
+
+        // Clean up after animation
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+// ==========================================
 // Risk Accordion
 // ==========================================
 class RiskAccordion {
@@ -703,4 +777,5 @@ document.addEventListener('DOMContentLoaded', () => {
     new FloatingCTA();
     new SignatureAnimation();
     new RiskAccordion();
+    new CelebrationAnimation();
 });
