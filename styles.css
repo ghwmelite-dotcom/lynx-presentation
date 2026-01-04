@@ -6984,17 +6984,19 @@ button:focus-visible {
 }
 
 .qr-code {
-    width: 100px;
-    height: 100px;
+    width: clamp(80px, 15vw, 100px);
+    height: clamp(80px, 15vw, 100px);
     background: white;
     border-radius: 12px;
     padding: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
 }
 
 .qr-code svg {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 .qr-info {
@@ -7050,11 +7052,13 @@ button:focus-visible {
     .qr-card {
         padding: 16px 20px;
         gap: 16px;
+        width: 100%;
+        max-width: 300px;
     }
 
     .qr-code {
-        width: 80px;
-        height: 80px;
+        width: 90px;
+        height: 90px;
     }
 
     .qr-label {
@@ -7064,6 +7068,9 @@ button:focus-visible {
     .print-btn {
         padding: 14px 24px;
         font-size: 0.85rem;
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
 }
 
@@ -7071,10 +7078,36 @@ button:focus-visible {
     .qr-card {
         flex-direction: column;
         text-align: center;
+        padding: 20px 16px;
+    }
+
+    .qr-code {
+        width: 100px;
+        height: 100px;
     }
 
     .qr-info {
         text-align: center;
+    }
+
+    .qr-label {
+        font-size: 0.95rem;
+    }
+
+    .qr-desc {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .qr-code {
+        width: 90px;
+        height: 90px;
+        padding: 6px;
+    }
+
+    .qr-card {
+        padding: 16px 12px;
     }
 }
 

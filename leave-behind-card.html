@@ -245,15 +245,20 @@
 
         .qr-section {
             text-align: center;
+            flex-shrink: 0;
         }
 
         .qr-code {
-            width: 90px;
-            height: 90px;
+            width: min(90px, 20vw);
+            height: min(90px, 20vw);
+            min-width: 60px;
+            min-height: 60px;
             background: white;
             border-radius: 12px;
             padding: 6px;
             margin-bottom: 8px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .qr-code svg {
@@ -262,7 +267,7 @@
         }
 
         .qr-label {
-            font-size: 0.65rem;
+            font-size: clamp(0.55rem, 1.5vw, 0.65rem);
             color: rgba(255, 255, 255, 0.5);
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -278,6 +283,107 @@
             font-style: italic;
         }
 
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .card {
+                padding: 32px 24px;
+                border-radius: 16px;
+            }
+
+            .name {
+                font-size: 1.4rem;
+            }
+
+            .title {
+                font-size: 0.8rem;
+            }
+
+            .award-line {
+                font-size: 0.65rem;
+                padding: 5px 10px;
+            }
+
+            .proposition {
+                padding: 18px;
+                margin-bottom: 20px;
+            }
+
+            .proposition-text {
+                font-size: 1rem;
+            }
+
+            .platforms {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .platform {
+                padding: 12px;
+            }
+
+            .platform-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 0.85rem;
+            }
+
+            .platform-info h4 {
+                font-size: 0.75rem;
+            }
+
+            .platform-info span {
+                font-size: 0.6rem;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .contact {
+                order: 2;
+            }
+
+            .contact-item {
+                justify-content: center;
+            }
+
+            .qr-section {
+                order: 1;
+            }
+
+            .qr-code {
+                width: 80px;
+                height: 80px;
+            }
+
+            .tagline {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin-top: 24px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card {
+                padding: 24px 16px;
+            }
+
+            .name {
+                font-size: 1.2rem;
+            }
+
+            .qr-code {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
         @media print {
             body {
                 background: #030303 !important;
@@ -290,6 +396,11 @@
                 max-width: 100%;
                 border-radius: 0;
                 padding: 40px;
+            }
+
+            .qr-code {
+                width: 100px;
+                height: 100px;
             }
         }
     </style>
@@ -345,56 +456,14 @@
                     </div>
                     <div>
                         <p class="contact-label">Full Proposal</p>
-                        <p class="contact-value">lynx-presentation.pages.dev</p>
+                        <p class="contact-value">lynx-pitch.pages.dev</p>
                     </div>
                 </div>
             </div>
 
             <div class="qr-section">
                 <div class="qr-code">
-                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="200" height="200" fill="white" rx="8"/>
-                        <!-- Position Detection Patterns -->
-                        <rect x="16" y="16" width="48" height="48" fill="#000"/>
-                        <rect x="22" y="22" width="36" height="36" fill="#fff"/>
-                        <rect x="28" y="28" width="24" height="24" fill="#000"/>
-                        <rect x="136" y="16" width="48" height="48" fill="#000"/>
-                        <rect x="142" y="22" width="36" height="36" fill="#fff"/>
-                        <rect x="148" y="28" width="24" height="24" fill="#000"/>
-                        <rect x="16" y="136" width="48" height="48" fill="#000"/>
-                        <rect x="22" y="142" width="36" height="36" fill="#fff"/>
-                        <rect x="28" y="148" width="24" height="24" fill="#000"/>
-                        <!-- Data Pattern -->
-                        <rect x="72" y="16" width="8" height="8" fill="#000"/>
-                        <rect x="88" y="16" width="8" height="8" fill="#000"/>
-                        <rect x="104" y="16" width="8" height="8" fill="#000"/>
-                        <rect x="120" y="16" width="8" height="8" fill="#000"/>
-                        <rect x="16" y="72" width="8" height="8" fill="#000"/>
-                        <rect x="16" y="88" width="8" height="8" fill="#000"/>
-                        <rect x="16" y="104" width="8" height="8" fill="#000"/>
-                        <rect x="16" y="120" width="8" height="8" fill="#000"/>
-                        <rect x="72" y="72" width="8" height="8" fill="#000"/>
-                        <rect x="88" y="80" width="8" height="8" fill="#000"/>
-                        <rect x="104" y="72" width="8" height="8" fill="#000"/>
-                        <rect x="120" y="88" width="8" height="8" fill="#000"/>
-                        <rect x="72" y="104" width="8" height="8" fill="#000"/>
-                        <rect x="96" y="112" width="8" height="8" fill="#000"/>
-                        <rect x="120" y="104" width="8" height="8" fill="#000"/>
-                        <rect x="136" y="72" width="8" height="8" fill="#000"/>
-                        <rect x="152" y="88" width="8" height="8" fill="#000"/>
-                        <rect x="168" y="72" width="8" height="8" fill="#000"/>
-                        <rect x="176" y="96" width="8" height="8" fill="#000"/>
-                        <rect x="72" y="136" width="8" height="8" fill="#000"/>
-                        <rect x="88" y="152" width="8" height="8" fill="#000"/>
-                        <rect x="104" y="144" width="8" height="8" fill="#000"/>
-                        <rect x="120" y="136" width="8" height="8" fill="#000"/>
-                        <rect x="136" y="152" width="8" height="8" fill="#000"/>
-                        <rect x="160" y="144" width="8" height="8" fill="#000"/>
-                        <rect x="176" y="136" width="8" height="8" fill="#000"/>
-                        <!-- Center Icon -->
-                        <circle cx="100" cy="100" r="18" fill="#a855f7"/>
-                        <text x="100" y="106" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="Inter, sans-serif">L</text>
-                    </svg>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://lynx-pitch.pages.dev/&bgcolor=ffffff&color=000000&margin=10" alt="QR Code to Proposal" style="width: 100%; height: 100%; border-radius: 8px;">
                 </div>
                 <p class="qr-label">Scan for Proposal</p>
             </div>
