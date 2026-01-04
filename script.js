@@ -661,9 +661,46 @@ class SignatureAnimation {
     }
 }
 
+// ==========================================
+// Risk Accordion
+// ==========================================
+class RiskAccordion {
+    constructor() {
+        this.items = document.querySelectorAll('.risk-item');
+        this.init();
+    }
+
+    init() {
+        this.items.forEach(item => {
+            const question = item.querySelector('.risk-question');
+            if (question) {
+                question.addEventListener('click', () => this.toggle(item));
+            }
+        });
+
+        // Open first item by default
+        if (this.items.length > 0) {
+            this.items[0].classList.add('active');
+        }
+    }
+
+    toggle(item) {
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        this.items.forEach(i => i.classList.remove('active'));
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    }
+}
+
 // Initialize new features
 document.addEventListener('DOMContentLoaded', () => {
     new SectionNavigation();
     new FloatingCTA();
     new SignatureAnimation();
+    new RiskAccordion();
 });
