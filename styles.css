@@ -4433,3 +4433,728 @@ button:focus-visible {
         margin-bottom: 8px;
     }
 }
+
+/* ==========================================
+   COMPREHENSIVE RESPONSIVE ENHANCEMENTS
+   ========================================== */
+
+/* Large Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    /* Founder Section */
+    .founder-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .founder-credentials {
+        margin: 32px 0;
+    }
+
+    /* Timing Grid */
+    .timing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .timing-card {
+        padding: 32px 28px;
+    }
+
+    /* Product Showcase */
+    .device-frame.laptop {
+        max-width: 100%;
+    }
+
+    .showcase-badge {
+        right: 20px;
+    }
+}
+
+/* Tablets & Large Phones (768px and below) */
+@media (max-width: 768px) {
+    /* Founder Section Mobile */
+    .section-founder {
+        padding: 80px 0;
+    }
+
+    .founder-layout {
+        gap: 36px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .founder-image-frame {
+        border-radius: 16px;
+    }
+
+    .award-badge {
+        padding: 8px 16px;
+        font-size: 0.65rem;
+        bottom: -10px;
+        gap: 6px;
+    }
+
+    .award-badge svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .image-glow {
+        filter: blur(40px);
+    }
+
+    .founder-content .display {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+    }
+
+    .founder-credentials {
+        gap: 12px;
+        margin: 28px 0;
+    }
+
+    .credential {
+        padding: 14px 16px;
+        gap: 12px;
+        border-radius: 14px;
+    }
+
+    .credential:hover {
+        transform: none;
+    }
+
+    .credential-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .credential-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .credential-text strong {
+        font-size: 0.9rem;
+    }
+
+    .credential-text span {
+        font-size: 0.8rem;
+    }
+
+    /* Product Showcase Mobile */
+    .product-showcase {
+        margin: 32px 0 48px;
+    }
+
+    .device-frame {
+        padding: 8px;
+        border-radius: 14px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .device-notch {
+        width: 50px;
+        height: 4px;
+        margin-bottom: 8px;
+        border-radius: 2px;
+    }
+
+    .device-screen {
+        border-radius: 8px;
+        aspect-ratio: 16 / 11;
+    }
+
+    .screen-overlay {
+        opacity: 1;
+        background: linear-gradient(180deg, transparent 50%, rgba(3, 3, 3, 0.95) 100%);
+        padding-bottom: 20px;
+    }
+
+    .preview-cta {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+
+    .preview-cta svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .showcase-badge {
+        top: -8px;
+        right: 12px;
+        padding: 6px 12px;
+        font-size: 0.6rem;
+        gap: 6px;
+    }
+
+    .live-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    /* Mockup Content Mobile */
+    .mockup-content {
+        padding: 20px 16px;
+    }
+
+    .mockup-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+
+    .mockup-content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+    }
+
+    .mockup-content p {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .mockup-features {
+        gap: 8px;
+    }
+
+    .mockup-features span {
+        padding: 5px 10px;
+        font-size: 0.6rem;
+    }
+
+    .mockup-header {
+        padding: 6px 10px;
+        gap: 10px;
+    }
+
+    .mockup-dots {
+        gap: 4px;
+    }
+
+    .mockup-dots span {
+        width: 6px;
+        height: 6px;
+    }
+
+    .mockup-url {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    /* Why Now Section Mobile */
+    .section-why-now {
+        padding: 80px 0;
+    }
+
+    .timing-grid {
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .timing-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .timing-card:hover {
+        transform: none;
+    }
+
+    .timing-number {
+        font-size: 2.25rem;
+        margin-bottom: 14px;
+    }
+
+    .timing-card h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .timing-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .urgency-box {
+        flex-direction: column;
+        padding: 24px 20px;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .urgency-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .urgency-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .urgency-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .urgency-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* CTA Action Box Mobile */
+    .cta-action-box {
+        padding: 28px 20px;
+        gap: 24px;
+        border-radius: 20px;
+        margin: 36px 0;
+    }
+
+    .step-label {
+        padding: 5px 12px;
+        font-size: 0.6rem;
+        margin-bottom: 12px;
+    }
+
+    .next-step h3 {
+        font-size: 1.15rem;
+        margin-bottom: 6px;
+    }
+
+    .next-step p {
+        font-size: 0.9rem;
+    }
+
+    .cta-action-box .cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .links-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Phones (480px and below) */
+@media (max-width: 480px) {
+    /* Founder Section Small Mobile */
+    .section-founder {
+        padding: 60px 0;
+    }
+
+    .founder-layout {
+        gap: 28px;
+    }
+
+    .founder-image-wrapper {
+        padding: 0;
+    }
+
+    .founder-image-frame {
+        border-radius: 14px;
+    }
+
+    .award-badge {
+        padding: 6px 12px;
+        font-size: 0.55rem;
+        bottom: -8px;
+    }
+
+    .award-badge svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .founder-content .display {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
+    .founder-credentials {
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .credential {
+        padding: 12px 14px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .credential-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+    }
+
+    .credential-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .credential-text strong {
+        font-size: 0.85rem;
+    }
+
+    .credential-text span {
+        font-size: 0.75rem;
+    }
+
+    .founder-content .body-large {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    /* Product Showcase Small Mobile */
+    .product-showcase {
+        margin: 24px 0 36px;
+    }
+
+    .device-frame {
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .device-notch {
+        width: 40px;
+        height: 3px;
+        margin-bottom: 6px;
+    }
+
+    .device-screen {
+        border-radius: 6px;
+    }
+
+    .screen-overlay {
+        padding-bottom: 16px;
+    }
+
+    .preview-cta {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .showcase-badge {
+        top: -6px;
+        right: 8px;
+        padding: 5px 10px;
+        font-size: 0.55rem;
+    }
+
+    .live-dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    .mockup-content {
+        padding: 16px 12px;
+    }
+
+    .mockup-logo {
+        width: 42px;
+        height: 42px;
+        font-size: 1.25rem;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .mockup-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .mockup-content p {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+
+    .mockup-features span {
+        padding: 4px 8px;
+        font-size: 0.55rem;
+    }
+
+    .mockup-header {
+        padding: 5px 8px;
+        gap: 8px;
+    }
+
+    .mockup-dots span {
+        width: 5px;
+        height: 5px;
+    }
+
+    .mockup-url {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+    }
+
+    /* Why Now Small Mobile */
+    .section-why-now {
+        padding: 60px 0;
+    }
+
+    .timing-grid {
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .timing-card {
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+
+    .timing-number {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .timing-card h4 {
+        font-size: 0.95rem;
+    }
+
+    .timing-card p {
+        font-size: 0.85rem;
+    }
+
+    .urgency-box {
+        padding: 20px 16px;
+        gap: 14px;
+        border-radius: 14px;
+    }
+
+    .urgency-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .urgency-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .urgency-content h4 {
+        font-size: 1rem;
+    }
+
+    .urgency-content p {
+        font-size: 0.85rem;
+    }
+
+    /* CTA Small Mobile */
+    .cta-action-box {
+        padding: 24px 16px;
+        gap: 20px;
+        border-radius: 16px;
+        margin: 28px 0;
+    }
+
+    .step-label {
+        padding: 4px 10px;
+        font-size: 0.55rem;
+        margin-bottom: 10px;
+    }
+
+    .next-step h3 {
+        font-size: 1.05rem;
+    }
+
+    .next-step p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra Small Phones (360px and below) */
+@media (max-width: 360px) {
+    /* Founder Extra Small */
+    .founder-layout {
+        gap: 24px;
+    }
+
+    .award-badge {
+        padding: 5px 10px;
+        font-size: 0.5rem;
+    }
+
+    .founder-content .display {
+        font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+    }
+
+    .credential {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .credential-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .credential-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .credential-text strong {
+        font-size: 0.8rem;
+    }
+
+    .credential-text span {
+        font-size: 0.7rem;
+    }
+
+    /* Product Showcase Extra Small */
+    .device-frame {
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .mockup-logo {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+
+    .mockup-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .mockup-content p {
+        font-size: 0.7rem;
+    }
+
+    .mockup-features span {
+        padding: 3px 6px;
+        font-size: 0.5rem;
+    }
+
+    /* Why Now Extra Small */
+    .timing-number {
+        font-size: 1.75rem;
+    }
+
+    .timing-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .timing-card p {
+        font-size: 0.8rem;
+    }
+
+    .urgency-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* CTA Extra Small */
+    .cta-action-box {
+        padding: 20px 14px;
+    }
+
+    .next-step h3 {
+        font-size: 0.95rem;
+    }
+}
+
+/* Landscape Mode for New Sections */
+@media (max-height: 500px) and (orientation: landscape) {
+    .section-founder,
+    .section-why-now {
+        padding: 50px 0;
+    }
+
+    .founder-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 30px;
+    }
+
+    .founder-image-wrapper {
+        max-width: 280px;
+    }
+
+    .timing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .timing-card {
+        padding: 16px;
+    }
+
+    .timing-number {
+        font-size: 1.5rem;
+    }
+
+    .cta-action-box {
+        flex-direction: row;
+        padding: 24px 32px;
+    }
+
+    .next-step {
+        text-align: left;
+    }
+}
+
+/* Touch Device Optimizations for New Sections */
+@media (hover: none) and (pointer: coarse) {
+    .founder-image-frame:hover .founder-image {
+        transform: none;
+    }
+
+    .timing-card:hover,
+    .credential:hover {
+        transform: none;
+    }
+
+    .timing-card:active,
+    .credential:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .preview-cta:hover {
+        transform: none;
+    }
+
+    .preview-cta:active {
+        transform: scale(0.95);
+    }
+
+    /* Ensure touch targets are large enough */
+    .credential,
+    .timing-card {
+        min-height: 44px;
+    }
+
+    .preview-cta {
+        min-height: 48px;
+    }
+}
+
+/* Safe Area Insets for Notched Devices */
+@supports (padding: max(0px)) {
+    .section-founder,
+    .section-why-now,
+    .section-cta {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .cta-action-box {
+        margin-left: max(0px, env(safe-area-inset-left));
+        margin-right: max(0px, env(safe-area-inset-right));
+    }
+}
