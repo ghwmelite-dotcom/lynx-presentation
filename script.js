@@ -542,3 +542,128 @@ if (prefersReducedMotion) {
     document.documentElement.style.setProperty('--duration-slow', '0.01s');
     document.documentElement.style.setProperty('--duration-slower', '0.01s');
 }
+
+// ==========================================
+// Section Navigation
+// ==========================================
+class SectionNavigation {
+    constructor() {
+        this.navItems = document.querySelectorAll('.section-nav-item');
+        this.sections = [];
+        this.currentSection = 'hero';
+        this.init();
+    }
+
+    init() {
+        // Get all sections referenced in nav
+        this.navItems.forEach(item => {
+            const sectionId = item.dataset.section;
+            const section = document.getElementById(sectionId);
+            if (section) {
+                this.sections.push({ id: sectionId, element: section, navItem: item });
+            }
+
+            // Click to scroll
+            item.addEventListener('click', () => {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Use scroll event for more reliable tracking
+        this.handleScroll = this.handleScroll.bind(this);
+        window.addEventListener('scroll', this.handleScroll, { passive: true });
+
+        // Initial check
+        this.handleScroll();
+    }
+
+    handleScroll() {
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+        let activeSection = this.sections[0]?.id || 'hero';
+
+        for (const { id, element } of this.sections) {
+            const rect = element.getBoundingClientRect();
+            const offsetTop = element.offsetTop;
+
+            if (scrollPosition >= offsetTop) {
+                activeSection = id;
+            }
+        }
+
+        if (activeSection !== this.currentSection) {
+            this.currentSection = activeSection;
+            this.setActive(activeSection);
+        }
+    }
+
+    setActive(sectionId) {
+        this.navItems.forEach(item => {
+            const isActive = item.dataset.section === sectionId;
+            item.classList.toggle('active', isActive);
+        });
+    }
+}
+
+// ==========================================
+// Floating CTA Button
+// ==========================================
+class FloatingCTA {
+    constructor() {
+        this.button = document.getElementById('floatingCta');
+        if (!this.button) return;
+        this.init();
+    }
+
+    init() {
+        // Show after scrolling past hero
+        const hero = document.getElementById('hero');
+        if (!hero) {
+            this.button.classList.add('visible');
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Show when hero is NOT intersecting (scrolled past)
+                this.button.classList.toggle('visible', !entry.isIntersecting);
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(hero);
+    }
+}
+
+// ==========================================
+// Signature Animation
+// ==========================================
+class SignatureAnimation {
+    constructor() {
+        this.signatureBlock = document.querySelector('.signature-block');
+        if (!this.signatureBlock) return;
+        this.init();
+    }
+
+    init() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(this.signatureBlock);
+    }
+}
+
+// Initialize new features
+document.addEventListener('DOMContentLoaded', () => {
+    new SectionNavigation();
+    new FloatingCTA();
+    new SignatureAnimation();
+});

@@ -5158,3 +5158,502 @@ button:focus-visible {
         margin-right: max(0px, env(safe-area-inset-right));
     }
 }
+
+/* ==========================================
+   SECTION PROGRESS NAVIGATION
+   ========================================== */
+.section-nav {
+    position: fixed;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 12px;
+    background: rgba(3, 3, 3, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s var(--ease);
+    position: relative;
+}
+
+.nav-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: all 0.3s var(--ease);
+}
+
+.section-nav-item:hover .nav-dot {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2);
+}
+
+.section-nav-item.active .nav-dot {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.section-nav-item.active .nav-dot::after {
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.nav-label {
+    position: absolute;
+    left: calc(100% + 16px);
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s var(--ease);
+    white-space: nowrap;
+    padding: 6px 12px;
+    background: rgba(3, 3, 3, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.section-nav-item:hover .nav-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section-nav-item.active .nav-label {
+    color: var(--accent-light);
+}
+
+@media (max-width: 1400px) {
+    .nav-label {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .section-nav {
+        left: 16px;
+        padding: 16px 10px;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-nav {
+        display: none;
+    }
+}
+
+/* ==========================================
+   FLOATING WHATSAPP BUTTON
+   ========================================== */
+.floating-cta {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 100px;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow:
+        0 10px 40px rgba(37, 211, 102, 0.4),
+        0 0 0 0 rgba(37, 211, 102, 0.4);
+    transition: all 0.4s var(--ease);
+    animation: floatingPulse 3s ease-in-out infinite;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.floating-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes floatingPulse {
+    0%, 100% { box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 15px 50px rgba(37, 211, 102, 0.5), 0 0 0 8px rgba(37, 211, 102, 0); }
+}
+
+.floating-cta:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 20px 60px rgba(37, 211, 102, 0.5);
+}
+
+.floating-cta svg {
+    width: 22px;
+    height: 22px;
+}
+
+.floating-cta-text {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .floating-cta {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 18px;
+        font-size: 0.8rem;
+    }
+
+    .floating-cta svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-cta {
+        padding: 14px;
+        border-radius: 50%;
+    }
+
+    .floating-cta-text {
+        display: none;
+    }
+
+    .floating-cta svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* ==========================================
+   BUILT IN GHANA BADGE - Premium Design
+   ========================================== */
+.ghana-pride {
+    position: absolute;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.ghana-pride-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 100px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s var(--ease);
+    cursor: default;
+}
+
+.ghana-pride-inner:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.ghana-stripes {
+    display: flex;
+    flex-direction: column;
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.stripe {
+    flex: 1;
+}
+
+.stripe.red {
+    background: #ce1126;
+}
+
+.stripe.yellow {
+    background: #fcd116;
+}
+
+.stripe.green {
+    background: #006b3f;
+}
+
+.ghana-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px 12px 24px;
+}
+
+.ghana-star {
+    font-size: 1rem;
+    color: #fcd116;
+    text-shadow: 0 0 10px rgba(252, 209, 22, 0.5);
+    animation: starPulse 2s ease-in-out infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.ghana-text {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: linear-gradient(90deg, #ce1126, #fcd116, #006b3f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ghana-glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, #ce1126, #fcd116, #006b3f);
+    border-radius: 100px;
+    opacity: 0;
+    z-index: -1;
+    filter: blur(15px);
+    transition: opacity 0.4s var(--ease);
+}
+
+.ghana-pride-inner:hover .ghana-glow {
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    .ghana-pride {
+        bottom: 120px;
+    }
+
+    .ghana-content {
+        padding: 10px 16px 10px 20px;
+    }
+
+    .ghana-text {
+        font-size: 0.65rem;
+    }
+
+    .ghana-stripes {
+        width: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ghana-pride {
+        bottom: 100px;
+    }
+}
+
+/* ==========================================
+   ORIGIN STORY SECTION
+   ========================================== */
+.section-origin {
+    background: transparent;
+    position: relative;
+    padding: 100px 0;
+}
+
+.section-origin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(168, 85, 247, 0.05), transparent 60%);
+    pointer-events: none;
+}
+
+.origin-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.origin-quote {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--white);
+    margin: 32px 0;
+    position: relative;
+    padding: 0 20px;
+}
+
+.origin-quote::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-serif);
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.15;
+    line-height: 1;
+}
+
+.origin-author {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-400);
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .section-origin {
+        padding: 60px 0;
+    }
+
+    .origin-quote {
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+        margin: 24px 0;
+    }
+
+    .origin-quote::before {
+        font-size: 5rem;
+        top: -25px;
+    }
+}
+
+/* ==========================================
+   SIGNATURE SECTION
+   ========================================== */
+.section-signature {
+    padding: 80px 0 40px;
+    background: transparent;
+}
+
+.signature-block {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.signature-note {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-400);
+    margin-bottom: 40px;
+}
+
+.signature-sign {
+    margin: 32px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.signature-svg {
+    width: 200px;
+    height: 60px;
+}
+
+.signature-path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: signatureDraw 2s ease forwards;
+    animation-play-state: paused;
+}
+
+.signature-block.visible .signature-path {
+    animation-play-state: running;
+}
+
+@keyframes signatureDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.signature-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.signature-title {
+    font-size: 0.95rem;
+    color: var(--gray-500);
+    margin-bottom: 24px;
+}
+
+.signature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(0, 107, 63, 0.1);
+    border: 1px solid rgba(0, 107, 63, 0.2);
+    border-radius: 100px;
+}
+
+.signature-badge span:last-child {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #34d399;
+}
+
+@media (max-width: 768px) {
+    .section-signature {
+        padding: 60px 0 30px;
+    }
+
+    .signature-note {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .signature-name {
+        font-size: 1.25rem;
+    }
+
+    .signature-svg {
+        width: 160px;
+        height: 50px;
+    }
+}
