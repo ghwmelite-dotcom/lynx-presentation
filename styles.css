@@ -1,6 +1,6 @@
 /* =============================================
-   TALENTVERSE - AFRICAN CREATIVE MARKETPLACE
-   Cinematic Premium Design
+   LYNX PARTNERSHIP PROPOSAL
+   Cinematic Premium Redesign
    ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -22,14 +22,6 @@
     --gray-900: #18181b;
     --gray-950: #09090b;
 
-    /* TalentVerse Color Palette */
-    --gold: #D4AF37;
-    --gold-light: #F4D03F;
-    --gold-glow: rgba(212, 175, 55, 0.5);
-    --teal: #14b8a6;
-    --teal-light: #2dd4bf;
-    --teal-glow: rgba(20, 184, 166, 0.5);
-
     /* Vibrant Accent Palette */
     --brilla: #6366f1;
     --brilla-light: #818cf8;
@@ -44,11 +36,6 @@
     --aurora-2: #8b5cf6;
     --aurora-3: #ec4899;
     --aurora-4: #f59e0b;
-
-    /* African Colors */
-    --africa-red: #CE1126;
-    --africa-gold: #FCD116;
-    --africa-green: #006B3F;
 
     /* Typography */
     --font-display: 'Syne', sans-serif;
@@ -8842,7 +8829,6 @@ button:focus-visible {
     }
 }
 
-
 /* ==========================================
    TALENTVERSE SPECIFIC STYLES
    ========================================== */
@@ -9573,4 +9559,184 @@ button:focus-visible {
     .category-pill {
         padding: 8px 14px;
     }
+}
+
+/* TalentVerse Section Styling */
+.section-talentverse {
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
+}
+
+.platform-icon.talentverse {
+    background: linear-gradient(135deg, #D4AF37 0%, #a855f7 100%);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chip-indicator.talentverse {
+    background: linear-gradient(135deg, #D4AF37 0%, #a855f7 100%);
+}
+
+.chip.featured {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.link-dot.talentverse {
+    background: linear-gradient(135deg, #D4AF37 0%, #a855f7 100%);
+}
+
+.cta-link.featured {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* TalentVerse Demo Styles */
+.demo-screen.talentverse-demo {
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.demo-app-header.talentverse-header {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
+}
+
+.demo-logo.talentverse-logo {
+    background: linear-gradient(135deg, #D4AF37 0%, #a855f7 100%);
+    color: white;
+    font-weight: 800;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+
+.demo-glow.talentverse-glow {
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 70%);
+}
+
+.demo-badge.talentverse {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.demo-cta-link.talentverse-cta-link:hover {
+    color: #D4AF37;
+}
+
+/* TalentVerse Talent Card Demo */
+.demo-talent-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+
+.talent-category {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #D4AF37;
+    margin-bottom: 6px;
+}
+
+.talent-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.talent-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.talent-tag {
+    font-size: 0.55rem;
+    padding: 2px 6px;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 100px;
+    color: #c084fc;
+}
+
+.talent-match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.match-label {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.match-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #D4AF37;
+}
+
+/* AI Match Demo */
+.demo-ai-match {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.demo-match-project {
+    font-size: 0.65rem;
+    color: white;
+}
+
+/* Opportunity Feed Demo */
+.demo-opportunities {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.opp-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    font-size: 0.65rem;
+}
+
+.opp-item.new {
+    border-left: 2px solid #D4AF37;
+}
+
+.opp-type {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.opp-budget {
+    color: #14b8a6;
+    font-weight: 600;
+}
+
+/* TalentVerse Featured Stats */
+.stat-item.talentverse-featured .stat-value {
+    color: #D4AF37;
+}
+
+.stat-item.talentverse-featured .stat-label {
+    color: rgba(212, 175, 55, 0.8);
 }
