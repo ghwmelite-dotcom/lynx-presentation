@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Behind Card - Ghana Colors - Osborn Manuel Davies K. Hodges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A5 landscape;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            background: linear-gradient(180deg,
+                #CE1126 0%, #CE1126 33.33%,
+                #FCD116 33.33%, #FCD116 66.66%,
+                #006B3F 66.66%, #006B3F 100%);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 720px;
+            background: rgba(0, 0, 0, 0.92);
+            border-radius: 28px;
+            padding: 52px;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid rgba(252, 209, 22, 0.4);
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        /* Ghana Flag Stripes at Top */
+        .flag-stripe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            display: flex;
+        }
+
+        .flag-stripe .red { flex: 1; background: #CE1126; }
+        .flag-stripe .gold { flex: 1; background: #FCD116; }
+        .flag-stripe .green { flex: 1; background: #006B3F; }
+
+        /* Black Star of Africa */
+        .black-star {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .black-star svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 2px 8px rgba(252, 209, 22, 0.4));
+        }
+
+        .ghana-badge {
+            position: absolute;
+            top: 80px;
+            right: 28px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #FCD116;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            margin-bottom: 36px;
+            padding-right: 80px;
+        }
+
+        .name {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #fff 0%, #FCD116 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 500;
+        }
+
+        .award-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            padding: 8px 18px;
+            background: linear-gradient(135deg, rgba(206, 17, 38, 0.2) 0%, rgba(252, 209, 22, 0.15) 50%, rgba(0, 107, 63, 0.2) 100%);
+            border: 1px solid rgba(252, 209, 22, 0.3);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #FCD116;
+        }
+
+        .award-line::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23FCD116'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z'/%3E%3C/svg%3E");
+        }
+
+        .proposition {
+            background: linear-gradient(135deg, rgba(206, 17, 38, 0.08) 0%, rgba(252, 209, 22, 0.06) 50%, rgba(0, 107, 63, 0.08) 100%);
+            border: 1px solid rgba(252, 209, 22, 0.2);
+            border-radius: 18px;
+            padding: 26px 28px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .proposition::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #CE1126 0%, #FCD116 50%, #006B3F 100%);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .proposition-label {
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #CE1126;
+            margin-bottom: 12px;
+        }
+
+        .proposition-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .proposition-text em {
+            font-style: normal;
+            color: #FCD116;
+            font-weight: 700;
+        }
+
+        .platforms {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .platform {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .platform:hover {
+            border-color: rgba(252, 209, 22, 0.3);
+            background: rgba(252, 209, 22, 0.05);
+        }
+
+        .platform-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .platform-icon.brilla {
+            background: linear-gradient(135deg, #CE1126 0%, #a00d1e 100%);
+            box-shadow: 0 4px 12px rgba(206, 17, 38, 0.3);
+        }
+
+        .platform-icon.trade {
+            background: linear-gradient(135deg, #006B3F 0%, #004d2d 100%);
+            box-shadow: 0 4px 12px rgba(0, 107, 63, 0.3);
+        }
+
+        .platform-info h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: #fff;
+        }
+
+        .platform-info span {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 28px;
+        }
+
+        .contact {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .contact-icon.whatsapp {
+            background: rgba(37, 211, 102, 0.18);
+            color: #25D366;
+        }
+
+        .contact-icon.web {
+            background: rgba(252, 209, 22, 0.15);
+            color: #FCD116;
+        }
+
+        .contact-label {
+            font-size: 0.62rem;
+            color: rgba(255, 255, 255, 0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .contact-value {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .qr-section {
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 14px;
+            padding: 8px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+        }
+
+        .qr-label {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.55);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        .tagline {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.72rem;
+            color: rgba(252, 209, 22, 0.5);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Flag stripe at bottom */
+        .flag-stripe-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            display: flex;
+        }
+
+        .flag-stripe-bottom .red { flex: 1; background: #CE1126; border-radius: 0 0 0 28px; }
+        .flag-stripe-bottom .gold { flex: 1; background: #FCD116; }
+        .flag-stripe-bottom .green { flex: 1; background: #006B3F; border-radius: 0 0 28px 0; }
+
+        @media print {
+            body {
+                background: linear-gradient(180deg,
+                    #CE1126 0%, #CE1126 33.33%,
+                    #FCD116 33.33%, #FCD116 66.66%,
+                    #006B3F 66.66%, #006B3F 100%) !important;
+                padding: 0;
+                min-height: auto;
+            }
+
+            .card {
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+                padding: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="flag-stripe">
+            <div class="red"></div>
+            <div class="gold"></div>
+            <div class="green"></div>
+        </div>
+
+        <div class="black-star">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40" fill="#000" stroke="#FCD116" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="ghana-badge">Built in Ghana</div>
+
+        <div class="header">
+            <h1 class="name">Osborn Manuel Davies K. Hodges</h1>
+            <p class="title">Tech Founder & Fullstack Developer</p>
+            <span class="award-line">Ghana Civil Service Best IT Tech Award 2024/25</span>
+        </div>
+
+        <div class="proposition">
+            <p class="proposition-label">The Proposition</p>
+            <p class="proposition-text">
+                No one in Ghana represents <em>tech founders</em>. Lynx could be the first to define this category — and own it.
+            </p>
+        </div>
+
+        <div class="platforms">
+            <div class="platform">
+                <div class="platform-icon brilla">B</div>
+                <div class="platform-info">
+                    <h4>BrillaPrep</h4>
+                    <span>EdTech • brillaprep.org</span>
+                </div>
+            </div>
+            <div class="platform">
+                <div class="platform-icon trade">T</div>
+                <div class="platform-info">
+                    <h4>TradeMetricsPro</h4>
+                    <span>FinTech • ea.trademetricspro.com</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="contact">
+                <div class="contact-item">
+                    <div class="contact-icon whatsapp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">WhatsApp</p>
+                        <p class="contact-value">+233 54 012 5882</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon web">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">Full Proposal</p>
+                        <p class="contact-value">lynx-pitch.pages.dev</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://lynx-pitch.pages.dev/&bgcolor=ffffff&color=000000&margin=10" alt="QR Code to Proposal">
+                </div>
+                <p class="qr-label">Scan for Proposal</p>
+            </div>
+        </div>
+
+        <p class="tagline">Building systems that outlive us.</p>
+
+        <div class="flag-stripe-bottom">
+            <div class="red"></div>
+            <div class="gold"></div>
+            <div class="green"></div>
+        </div>
+    </div>
+</body>
+</html>

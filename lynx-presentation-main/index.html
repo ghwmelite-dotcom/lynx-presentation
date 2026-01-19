@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>TalentVerse | Discover African Creative Talent</title>
+    <meta name="description" content="AI-powered marketplace connecting creative professionals with opportunities across Africa. Musicians, actors, voice artists, and more.">
+    <meta name="keywords" content="African talent, Afrobeats, Nollywood, Ghana music, Nigeria entertainment, voice artists, creative marketplace, AI talent matching">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://talentverse-dbv.pages.dev/">
+    <meta property="og:title" content="TalentVerse | Discover African Creative Talent">
+    <meta property="og:description" content="AI-powered marketplace connecting creative professionals with opportunities across Africa. Musicians, actors, voice artists, and more.">
+    <meta property="og:image" content="https://talentverse-dbv.pages.dev/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://talentverse-dbv.pages.dev/">
+    <meta name="twitter:title" content="TalentVerse | Discover African Creative Talent">
+    <meta name="twitter:description" content="AI-powered marketplace connecting creative professionals with opportunities across Africa.">
+    <meta name="twitter:image" content="https://talentverse-dbv.pages.dev/og-image.svg">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#030303">
+    <meta name="author" content="TalentVerse">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=9.0">
+</head>
+<body>
+    <!-- Screen Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" class="loader-icon">
+                    <defs>
+                        <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4AF37"/>
+                            <stop offset="50%" style="stop-color:#a855f7"/>
+                            <stop offset="100%" style="stop-color:#14b8a6"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="32" fill="none" stroke="url(#loaderGrad)" stroke-width="1" class="loader-ring" opacity="0.3"/>
+                    <path d="M30 30 L30 55 Q30 70 50 70 Q70 70 70 55 L70 30" fill="none" stroke="url(#loaderGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="loader-l"/>
+                    <circle cx="50" cy="25" r="5" fill="url(#loaderGrad)" class="loader-dot"/>
+                </svg>
+            </div>
+            <div class="loader-text">
+                <span class="loader-word">TALENT</span>
+                <span class="loader-divider">VERSE</span>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Adinkra Pattern Overlay -->
+    <div class="adinkra-pattern"></div>
+
+    <!-- Morphing Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Section Progress Indicator -->
+    <div class="section-nav" id="sectionNav">
+        <div class="section-nav-item active" data-section="hero">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Intro</span>
+        </div>
+        <div class="section-nav-item" data-section="problem">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Problem</span>
+        </div>
+        <div class="section-nav-item" data-section="solution">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Solution</span>
+        </div>
+        <div class="section-nav-item" data-section="features">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Features</span>
+        </div>
+        <div class="section-nav-item" data-section="market">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Market</span>
+        </div>
+        <div class="section-nav-item" data-section="how-it-works">
+            <span class="nav-dot"></span>
+            <span class="nav-label">How It Works</span>
+        </div>
+        <div class="section-nav-item" data-section="partnership">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Partnership</span>
+        </div>
+        <div class="section-nav-item" data-section="contact">
+            <span class="nav-dot"></span>
+            <span class="nav-label">Connect</span>
+        </div>
+    </div>
+
+    <!-- Floating CTA Button -->
+    <a href="https://talentverse-dbv.pages.dev/" target="_blank" class="floating-cta" id="floatingCta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span class="floating-cta-text">Visit Platform</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <span class="brand-mark talentverse"></span>
+            <span class="brand-text">TalentVerse</span>
+        </div>
+        <a href="https://talentverse-dbv.pages.dev/" target="_blank" class="nav-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Launch Platform</span>
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="overline fade-in">AI-Powered Creative Marketplace</p>
+                    <h1 class="hero-title fade-in">
+                        <span class="line">Discover</span>
+                        <span class="line"><em>African</em></span>
+                        <span class="line">Creative Talent.</span>
+                    </h1>
+                    <p class="hero-sub fade-in">
+                        Connecting musicians, actors, and voice artists with global opportunities.
+                    </p>
+                </div>
+                <div class="hero-visual">
+                    <div class="orb orb-1"></div>
+                    <div class="orb orb-2"></div>
+                    <div class="orb orb-3"></div>
+                </div>
+                <!-- Pan-African Badge -->
+                <div class="ghana-pride fade-in">
+                    <div class="ghana-pride-inner pan-african">
+                        <div class="ghana-stripes">
+                            <span class="stripe red"></span>
+                            <span class="stripe gold"></span>
+                            <span class="stripe green"></span>
+                        </div>
+                        <div class="ghana-content">
+                            <span class="ghana-star">&#9733;</span>
+                            <span class="ghana-text">Made for Africa</span>
+                        </div>
+                        <div class="ghana-glow"></div>
+                    </div>
+                </div>
+
+                <a href="#problem" class="scroll-cue fade-in">
+                    <span>Scroll to explore</span>
+                    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="section" id="problem">
+            <div class="container container-narrow">
+                <p class="overline fade-in"><span class="scramble">The Problem</span></p>
+                <h2 class="display fade-in">
+                    Africa's talent is <em>invisible.</em>
+                </h2>
+                <p class="body-large fade-in">
+                    Africa is home to some of the world's most vibrant creative industries. Afrobeats dominates global charts. Nollywood produces more films than Hollywood. Yet most African creatives struggle to connect with opportunities beyond their borders.
+                </p>
+
+                <div class="problem-stats fade-in">
+                    <div class="problem-stat">
+                        <div class="stat-visual problem">
+                            <span class="stat-number-large">2nd</span>
+                            <span class="stat-context">Largest film industry globally</span>
+                        </div>
+                        <p class="stat-insight">Nollywood produces 2,500+ films yearly, yet lacks global distribution infrastructure</p>
+                    </div>
+                    <div class="problem-stat">
+                        <div class="stat-visual problem">
+                            <span class="stat-number-large">$1B+</span>
+                            <span class="stat-context">Afrobeats market value</span>
+                        </div>
+                        <p class="stat-insight">While the genre explodes globally, most artists still can't find international bookings</p>
+                    </div>
+                    <div class="problem-stat">
+                        <div class="stat-visual problem">
+                            <span class="stat-number-large">85%</span>
+                            <span class="stat-context">Talent undiscovered</span>
+                        </div>
+                        <p class="stat-insight">Most African creatives have no platform to showcase their work to global clients</p>
+                    </div>
+                </div>
+
+                <div class="chips fade-in">
+                    <div class="chip">
+                        <span class="chip-indicator music"></span>
+                        <span class="chip-text">Musicians</span>
+                        <span class="chip-label">Afrobeats, Highlife, Amapiano</span>
+                    </div>
+                    <div class="chip">
+                        <span class="chip-indicator film"></span>
+                        <span class="chip-text">Actors</span>
+                        <span class="chip-label">Nollywood, Ghallywood</span>
+                    </div>
+                    <div class="chip">
+                        <span class="chip-indicator voice"></span>
+                        <span class="chip-text">Voice Artists</span>
+                        <span class="chip-label">Commercials, Animation, Dubbing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section class="section section-dark" id="solution">
+            <div class="container container-narrow">
+                <p class="overline fade-in"><span class="scramble">The Solution</span></p>
+                <h2 class="display fade-in">
+                    TalentVerse changes <em>everything.</em>
+                </h2>
+                <p class="body-large fade-in">
+                    We're building the bridge between African creative talent and global opportunities. Using AI-powered matching, we connect the right talent with the right projects - whether it's a Nigerian actor for a Netflix series or a Ghanaian voice artist for a global campaign.
+                </p>
+
+                <div class="solution-showcase fade-in">
+                    <div class="showcase-card main">
+                        <div class="showcase-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="url(#goldGrad)" stroke-width="2" fill="none"/>
+                                <path d="M24 14v10l7 7" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#D4AF37"/>
+                                        <stop offset="100%" style="stop-color:#F4D03F"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <h3>AI-Powered Matching</h3>
+                        <p>Our algorithms analyze skills, style, availability, and project requirements to create perfect matches between talent and opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="comparison fade-in">
+                    <div class="compare-col">
+                        <h4>Before TalentVerse</h4>
+                        <ul>
+                            <li>Word-of-mouth discovery</li>
+                            <li>Limited to local networks</li>
+                            <li>No standardized portfolios</li>
+                            <li>Missed global opportunities</li>
+                        </ul>
+                    </div>
+                    <div class="compare-equals">&#8594;</div>
+                    <div class="compare-col highlight">
+                        <h4>With TalentVerse</h4>
+                        <ul>
+                            <li>AI-powered matching</li>
+                            <li>Global reach, local talent</li>
+                            <li>Professional showcases</li>
+                            <li>24/7 opportunity access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Features -->
+        <section class="section section-brilla" id="features">
+            <div class="container">
+                <div class="platform-header fade-in">
+                    <div class="platform-brand">
+                        <div class="platform-icon talentverse-icon">TV</div>
+                        <div class="platform-info">
+                            <span class="platform-name"><span class="scramble">TalentVerse</span></span>
+                            <span class="platform-url">talentverse-dbv.pages.dev</span>
+                        </div>
+                    </div>
+                    <a href="https://talentverse-dbv.pages.dev" target="_blank" class="platform-link">
+                        Explore Platform
+                        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </a>
+                </div>
+
+                <div class="platform-hero fade-in">
+                    <h2 class="display">
+                        Everything African talent needs to <em>shine globally.</em>
+                    </h2>
+                    <p class="body-large">
+                        A comprehensive platform designed specifically for the unique needs of African creative professionals. Built with AI, powered by opportunity.
+                    </p>
+                </div>
+
+                <!-- Animated Product Demo -->
+                <div class="product-demo fade-in">
+                    <div class="demo-device">
+                        <div class="demo-device-frame">
+                            <div class="demo-notch"></div>
+                            <div class="demo-screen talentverse-demo">
+                                <!-- Animated App Interface -->
+                                <div class="demo-app">
+                                    <div class="demo-app-header talentverse-header">
+                                        <div class="demo-logo tv-logo">TV</div>
+                                        <span>TalentVerse</span>
+                                        <div class="demo-user-avatar">&#128100;</div>
+                                    </div>
+                                    <div class="demo-app-content">
+                                        <!-- Talent Card Animation -->
+                                        <div class="demo-talent-card">
+                                            <div class="talent-category">Afrobeats Artist</div>
+                                            <div class="talent-name">
+                                                <span class="typing-text">Kofi Mensah</span>
+                                            </div>
+                                            <div class="talent-tags">
+                                                <span class="talent-tag">Vocalist</span>
+                                                <span class="talent-tag">Songwriter</span>
+                                                <span class="talent-tag">Ghana</span>
+                                            </div>
+                                            <div class="talent-stats">
+                                                <div class="talent-stat">
+                                                    <span class="stat-value">98%</span>
+                                                    <span class="stat-label">Match</span>
+                                                </div>
+                                                <div class="talent-stat">
+                                                    <span class="stat-value">4.9</span>
+                                                    <span class="stat-label">Rating</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- AI Match Indicator -->
+                                        <div class="demo-ai-match">
+                                            <div class="ai-match-header">
+                                                <span class="ai-icon">&#129302;</span>
+                                                <span>AI Match Found</span>
+                                            </div>
+                                            <div class="ai-match-project">
+                                                <span class="project-label">Project:</span>
+                                                <span class="project-name">Netflix Series Soundtrack</span>
+                                            </div>
+                                        </div>
+                                        <!-- Opportunity Feed -->
+                                        <div class="demo-opportunities">
+                                            <div class="opportunity-item new">
+                                                <span class="opp-type">Voice Over</span>
+                                                <span class="opp-budget">$2,500</span>
+                                            </div>
+                                            <div class="opportunity-item">
+                                                <span class="opp-type">Film Role</span>
+                                                <span class="opp-budget">$5,000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-glow talentverse-glow"></div>
+                    </div>
+                    <div class="demo-badge talentverse">
+                        <span class="live-dot"></span>
+                        Live Platform Preview
+                    </div>
+                    <a href="https://talentverse-dbv.pages.dev" target="_blank" class="demo-cta-link">
+                        <span>Experience the Full Platform</span>
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="features-grid fade-in">
+                    <div class="feature-card">
+                        <div class="feature-icon">&#127925;</div>
+                        <h3>Smart Talent Profiles</h3>
+                        <p>AI-enhanced profiles that showcase your work, skills, and unique style. Upload demos, reels, and portfolios that get discovered by the right clients.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#129302;</div>
+                        <h3>AI-Powered Matching</h3>
+                        <p>Our algorithms analyze thousands of data points to match talent with perfect opportunities - no more missed connections or wrong fits.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#127758;</div>
+                        <h3>Global Opportunity Feed</h3>
+                        <p>Access opportunities from around the world - music placements, film roles, voice over gigs, commercial campaigns, and more.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128176;</div>
+                        <h3>Secure Payments</h3>
+                        <p>Built-in escrow and payment processing that works across African currencies. Get paid safely and on time, every time.</p>
+                    </div>
+                </div>
+
+                <div class="stats-banner shine fade-in">
+                    <div class="stat-highlight">
+                        <span class="stat-number" data-count="500000000">0</span>
+                        <span class="stat-desc">creative professionals across Africa waiting to be discovered</span>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-value">54</span>
+                            <span class="stat-label">African Countries</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">1000+</span>
+                            <span class="stat-label">Languages & Dialects</span>
+                        </div>
+                        <div class="stat-item featured">
+                            <span class="stat-value">LIVE</span>
+                            <span class="stat-label">talentverse-dbv.pages.dev</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Opportunity -->
+        <section class="section" id="market">
+            <div class="container container-narrow">
+                <div class="section-header fade-in">
+                    <p class="overline"><span class="scramble">The Opportunity</span></p>
+                    <h2 class="display">Africa's creative economy is <em>exploding.</em></h2>
+                </div>
+
+                <!-- African Creative Market Opportunity -->
+                <div class="market-opportunity fade-in">
+                    <div class="market-opportunity-header">
+                        <span class="opportunity-tag">The African Creative Boom</span>
+                        <h3>A <em>$4.2 billion</em> industry - and accelerating</h3>
+                    </div>
+
+                    <div class="opportunity-stats-grid">
+                        <div class="opportunity-stat-card hero-stat">
+                            <div class="hero-stat-visual">
+                                <div class="stat-row">
+                                    <span class="stat-prefix">$</span>
+                                    <span class="stat-value-large">4.2B</span>
+                                </div>
+                                <div class="stat-arrow">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-prefix">$</span>
+                                    <span class="stat-value-large future">12B</span>
+                                </div>
+                            </div>
+                            <div class="hero-stat-context">
+                                <strong>African Creative Industry</strong>
+                                <span>Expected to triple by 2030</span>
+                            </div>
+                            <div class="stat-badge">
+                                <span class="badge-value">15%+</span>
+                                <span class="badge-label">CAGR</span>
+                            </div>
+                        </div>
+
+                        <div class="opportunity-stat-card">
+                            <div class="stat-icon-wrapper mobile">
+                                <span>&#127925;</span>
+                            </div>
+                            <div class="stat-number">$1B+</div>
+                            <div class="stat-description">
+                                <strong>Afrobeats Market</strong>
+                                <span>The fastest-growing music genre globally with 200%+ streaming growth</span>
+                            </div>
+                        </div>
+
+                        <div class="opportunity-stat-card">
+                            <div class="stat-icon-wrapper connectivity">
+                                <span>&#127916;</span>
+                            </div>
+                            <div class="stat-number">$660M</div>
+                            <div class="stat-description">
+                                <strong>Nollywood Revenue</strong>
+                                <span>Second-largest film industry by volume, growing demand for global content</span>
+                            </div>
+                        </div>
+
+                        <div class="opportunity-stat-card highlight">
+                            <div class="stat-icon-wrapper growth">
+                                <span>&#128640;</span>
+                            </div>
+                            <div class="stat-number">1.4B</div>
+                            <div class="stat-description">
+                                <strong>African Population</strong>
+                                <span>Youngest continent with median age of 19 - the future of global creativity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-insight">
+                        <div class="insight-visual">
+                            <div class="pulse-ring"></div>
+                            <span class="insight-emoji">&#127757;</span>
+                        </div>
+                        <div class="insight-content">
+                            <p><strong>Global brands are desperate for authentic African content.</strong> Netflix, Spotify, Disney, and major advertisers are all actively seeking African talent. TalentVerse is the bridge they need.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section section-dark" id="how-it-works">
+            <div class="container container-narrow">
+                <div class="section-header fade-in">
+                    <p class="overline"><span class="scramble">How It Works</span></p>
+                    <h2 class="display">Simple for talent. <em>Powerful for clients.</em></h2>
+                </div>
+
+                <div class="dual-flow fade-in">
+                    <!-- For Talent -->
+                    <div class="flow-section">
+                        <h3 class="flow-heading">
+                            <span class="flow-icon">&#127908;</span>
+                            For Talent
+                        </h3>
+                        <div class="flow-steps-vertical">
+                            <div class="flow-step-v">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Create Your Profile</h4>
+                                    <p>Upload your demos, reels, and portfolio. Our AI analyzes your unique style and skills.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step-v">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Get Matched</h4>
+                                    <p>Receive AI-curated opportunities that match your skills, style, and availability.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step-v">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Book & Earn</h4>
+                                    <p>Accept projects, deliver your work, and get paid securely through the platform.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- For Clients -->
+                    <div class="flow-section">
+                        <h3 class="flow-heading">
+                            <span class="flow-icon">&#128188;</span>
+                            For Clients
+                        </h3>
+                        <div class="flow-steps-vertical">
+                            <div class="flow-step-v">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Post Your Project</h4>
+                                    <p>Describe what you need - genre, style, budget, timeline. Be as specific as you want.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step-v">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Review AI Matches</h4>
+                                    <p>Get a curated shortlist of perfect matches, with demos and portfolios ready to review.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step-v">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Collaborate & Create</h4>
+                                    <p>Book talent, manage projects, and receive professional deliverables on time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categories-showcase fade-in">
+                    <h3 class="showcase-title">Talent Categories</h3>
+                    <div class="category-pills">
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#127925;</span>
+                            <span class="pill-text">Musicians</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#127916;</span>
+                            <span class="pill-text">Actors</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#127908;</span>
+                            <span class="pill-text">Voice Artists</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#128378;</span>
+                            <span class="pill-text">Dancers</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#127917;</span>
+                            <span class="pill-text">Models</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#127912;</span>
+                            <span class="pill-text">Visual Artists</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#128221;</span>
+                            <span class="pill-text">Writers</span>
+                        </div>
+                        <div class="category-pill">
+                            <span class="pill-emoji">&#127775;</span>
+                            <span class="pill-text">Influencers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regions & Focus -->
+        <section class="section" id="regions">
+            <div class="container container-narrow">
+                <div class="section-header fade-in">
+                    <p class="overline"><span class="scramble">Our Focus</span></p>
+                    <h2 class="display">Starting with <em>West Africa.</em> Scaling globally.</h2>
+                </div>
+
+                <div class="regions-grid fade-in">
+                    <div class="region-card primary">
+                        <div class="region-flag">&#127468;&#127469;</div>
+                        <h4>Ghana</h4>
+                        <p>Highlife, Afrobeats, Ghallywood, vibrant creative scene</p>
+                        <span class="region-status">Launch Market</span>
+                    </div>
+                    <div class="region-card primary">
+                        <div class="region-flag">&#127475;&#127468;</div>
+                        <h4>Nigeria</h4>
+                        <p>Afrobeats epicenter, Nollywood hub, largest creative economy</p>
+                        <span class="region-status">Launch Market</span>
+                    </div>
+                    <div class="region-card">
+                        <div class="region-flag">&#127472;&#127466;</div>
+                        <h4>Kenya</h4>
+                        <p>East African creative hub, growing film industry</p>
+                        <span class="region-status">Phase 2</span>
+                    </div>
+                    <div class="region-card">
+                        <div class="region-flag">&#127487;&#127462;</div>
+                        <h4>South Africa</h4>
+                        <p>Amapiano, established film industry, global connections</p>
+                        <span class="region-status">Phase 2</span>
+                    </div>
+                </div>
+
+                <div class="genre-highlight fade-in">
+                    <h3>Industry Verticals</h3>
+                    <div class="genre-cards">
+                        <div class="genre-card afrobeats">
+                            <div class="genre-icon">&#127926;</div>
+                            <h4>Afrobeats</h4>
+                            <p>The world's fastest-growing music genre. Artists from Burna Boy to emerging talents.</p>
+                        </div>
+                        <div class="genre-card nollywood">
+                            <div class="genre-icon">&#127910;</div>
+                            <h4>Nollywood</h4>
+                            <p>Over 2,500 films produced annually. Netflix and global streamers are investing heavily.</p>
+                        </div>
+                        <div class="genre-card voiceover">
+                            <div class="genre-icon">&#127897;</div>
+                            <h4>Voice Over</h4>
+                            <p>1,000+ African languages. Massive demand for authentic voices in ads, animation, and dubbing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Benefits -->
+        <section class="section" id="partnership">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <p class="overline"><span class="scramble">The Partnership</span></p>
+                    <h2 class="display">Why TalentVerse <em>wins.</em></h2>
+                </div>
+
+                <div class="benefits-grid fade-in">
+                    <div class="benefit-card">
+                        <div class="benefit-header talentverse-benefit">
+                            <h3><span class="scramble">For Talent</span></h3>
+                        </div>
+                        <ul class="benefit-list">
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>Global visibility from day one</strong>
+                                    <span>Your profile reaches clients worldwide, not just your local network.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>AI does the matchmaking</strong>
+                                    <span>Stop cold-pitching. Let opportunities find you based on your actual skills.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>Fair, secure payments</strong>
+                                    <span>Get paid in your currency, on time, with built-in escrow protection.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>Professional portfolio</strong>
+                                    <span>Your work showcased beautifully - demos, reels, reviews all in one place.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-header client-benefit">
+                            <h3><span class="scramble">For Clients</span></h3>
+                        </div>
+                        <ul class="benefit-list">
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>Access untapped talent pools</strong>
+                                    <span>Find authentic African voices and styles that stand out globally.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>AI-curated shortlists</strong>
+                                    <span>No more scrolling through thousands of profiles. Get perfect matches instantly.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>Streamlined workflow</strong>
+                                    <span>Brief, book, and manage projects all in one platform. No email chaos.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">&#9670;</span>
+                                <div>
+                                    <strong>Verified professionals</strong>
+                                    <span>Every talent is verified with reviews and work samples. No surprises.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Roadmap -->
+        <section class="section section-dark" id="roadmap">
+            <div class="container container-narrow">
+                <div class="section-header fade-in">
+                    <p class="overline"><span class="scramble">The Vision</span></p>
+                    <h2 class="display">Africa first. <em>Then the world.</em></h2>
+                </div>
+
+                <div class="timeline fade-in">
+                    <div class="timeline-step active">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h4><span class="scramble">Ghana & Nigeria</span></h4>
+                            <p>Launch in Africa's two largest creative markets. Build the talent database. Perfect the AI matching.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h4><span class="scramble">Pan-African Expansion</span></h4>
+                            <p>Kenya, South Africa, Tanzania, Senegal, and beyond. Every major creative hub across the continent.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h4><span class="scramble">Global Marketplace</span></h4>
+                            <p>Connect African talent with clients in LA, London, Lagos, and everywhere in between. The world's creative marketplace.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vision-statement fade-in">
+                    <div class="vision-icon">&#127757;</div>
+                    <blockquote>
+                        "In 5 years, when a brand anywhere in the world needs authentic African creative talent, TalentVerse will be the first place they look."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech & AI -->
+        <section class="section" id="technology">
+            <div class="container container-narrow">
+                <div class="section-header fade-in">
+                    <p class="overline"><span class="scramble">The Technology</span></p>
+                    <h2 class="display">AI that <em>understands</em> creativity.</h2>
+                </div>
+
+                <div class="tech-showcase fade-in">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                                <path d="M24 4v8M24 36v8M4 24h8M36 24h8M8.93 8.93l5.66 5.66M33.41 33.41l5.66 5.66M8.93 39.07l5.66-5.66M33.41 14.59l5.66-5.66" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="24" cy="24" r="8" fill="currentColor" opacity="0.2"/>
+                            </svg>
+                        </div>
+                        <h3>Neural Matching Engine</h3>
+                        <p>Our AI analyzes vocal timbre, acting style, visual aesthetics, and creative DNA to make matches that feel intuitive, not algorithmic.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                                <path d="M16 28l6-8 4 5 8-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Real-Time Analytics</h3>
+                        <p>Track profile views, match rates, and market trends. Know what clients are looking for before they even post a project.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+                                <path d="M24 14v10l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Smart Portfolio Builder</h3>
+                        <p>Upload raw content and let AI help you showcase it perfectly. Automatic tagging, categorization, and optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section-cta" id="contact">
+            <!-- Celebration Confetti Container -->
+            <div class="celebration-container" id="celebrationContainer"></div>
+
+            <div class="container container-narrow">
+                <h2 class="display-large fade-in">
+                    Join the <em>movement.</em>
+                </h2>
+                <p class="body-large fade-in">
+                    TalentVerse is building the future of African creative talent discovery. Whether you're a musician ready to go global, an actor seeking international roles, or a brand looking for authentic African voices - your journey starts here.
+                </p>
+
+                <div class="cta-action-box fade-in">
+                    <div class="next-step">
+                        <span class="step-label">Get Started</span>
+                        <h3>Explore the Platform</h3>
+                        <p>Discover African talent or create your professional profile today.</p>
+                    </div>
+                    <a href="https://talentverse-dbv.pages.dev" target="_blank" class="cta-button magnetic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        <span>Launch TalentVerse</span>
+                    </a>
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="qr-section fade-in">
+                    <div class="qr-card">
+                        <div class="qr-code">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://talentverse-dbv.pages.dev&bgcolor=ffffff&color=000000&margin=10" alt="QR Code to TalentVerse" style="width: 100%; height: 100%; border-radius: 8px;">
+                        </div>
+                        <div class="qr-info">
+                            <p class="qr-label">Scan to Explore</p>
+                            <p class="qr-desc">Quick access from your phone</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-links fade-in">
+                    <span class="links-label">Key Industries:</span>
+                    <span class="cta-tag">
+                        <span class="tag-dot afrobeats"></span>
+                        Afrobeats
+                    </span>
+                    <span class="cta-tag">
+                        <span class="tag-dot nollywood"></span>
+                        Nollywood
+                    </span>
+                    <span class="cta-tag">
+                        <span class="tag-dot voiceover"></span>
+                        Voice Over
+                    </span>
+                </div>
+                <p class="tagline fade-in">Connecting Africa's creative talent to the world.</p>
+            </div>
+        </section>
+
+        <!-- Platform Signature -->
+        <section class="section section-signature">
+            <div class="container container-narrow">
+                <div class="signature-block fade-in">
+                    <p class="signature-note">TalentVerse is more than a platform - it's a movement to ensure African creative talent gets the global recognition it deserves. Built by Africans, for the world.</p>
+                    <div class="signature-logo">
+                        <div class="tv-logo-large">
+                            <span class="tv-letter">T</span>
+                            <span class="tv-letter">V</span>
+                        </div>
+                    </div>
+                    <p class="signature-name">TalentVerse</p>
+                    <p class="signature-title">Discover African Creative Talent</p>
+                    <div class="signature-badge-enhanced pan-african-badge">
+                        <div class="badge-stripes">
+                            <span class="stripe-red"></span>
+                            <span class="stripe-gold"></span>
+                            <span class="stripe-green"></span>
+                        </div>
+                        <div class="badge-content">
+                            <span class="badge-star">&#9733;</span>
+                            <span class="badge-text">Made for Africa</span>
+                        </div>
+                        <div class="badge-shine"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> TalentVerse. Connecting Africa's creative talent to the world.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=9.0"></script>
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>
